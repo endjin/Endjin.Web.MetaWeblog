@@ -77,6 +77,7 @@
     <Compile Include="Domain\XmlRpc\ResponseParamValue.cs" />
     <Compile Include="Domain\XmlRpc\RequestValue.cs" />
     <Compile Include="Domain\XmlRpc\VersionResult.cs" />
+    <Compile Include="Processors\GetCategoriesProcessor.cs" />
     <Compile Include="Installers\RequestMapperFactoryInstaller.cs" />
     <Compile Include="Installers\ProcessorFactoryInstaller.cs" />
     <Compile Include="Installers\ResponseMapperFactoryInstaller.cs" />
@@ -93,7 +94,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

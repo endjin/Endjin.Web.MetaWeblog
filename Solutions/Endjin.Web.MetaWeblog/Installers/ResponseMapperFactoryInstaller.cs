@@ -23,6 +23,7 @@
         private void RegisterDefaultContent(IResponseMapperFactory responseMapperFactory)
         {
             responseMapperFactory.RegisterContentFor<BlogInfoToXmlRpcResponseMapper>("blogger.getUsersBlogs");
+            responseMapperFactory.RegisterContentFor<CategoryInfoToXmlRpcResponseMapper>("metaWeblog.getCategories");
         }
     }
 }

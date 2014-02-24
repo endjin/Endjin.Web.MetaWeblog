@@ -22,6 +22,8 @@
         private void RegisterDefaultContent(IProcessorFactory processorFactory)
         {
             processorFactory.RegisterContentFor<GetUserBlogsProcessor>("blogger.getUsersBlogs");
+            processorFactory.RegisterContentFor<GetCategoriesProcessor>("metaWeblog.getCategories");
         }
+
     }
 }
