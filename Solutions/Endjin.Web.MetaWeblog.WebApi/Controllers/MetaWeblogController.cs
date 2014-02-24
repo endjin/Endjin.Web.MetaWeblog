@@ -16,7 +16,7 @@
 
     // TODO: Figure out how to test attribute based routes.
     // [Route("MetaWeblog")]
-    [XmlRpcConfig]
+    //[XmlRpcConfig]
     public class MetaWeblogController : ApiController
     {
         private readonly IRequestMapperFactory requestMapperFactory;

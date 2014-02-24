@@ -55,6 +55,7 @@
     <Compile Include="Contracts\Mappers\IResponseMapperFactory.cs" />
     <Compile Include="Contracts\Processors\IProcessor.cs" />
     <Compile Include="Contracts\Processors\IProcessorFactory.cs" />
+    <Compile Include="Domain\MetaWeblog\Request\GetCategoriesRequest.cs" />
     <Compile Include="Domain\MetaWeblog\Request\GetUserBlogsRequest.cs" />
     <Compile Include="Domain\MetaWeblog\Response\CategoryInfo.cs" />
     <Compile Include="Domain\MetaWeblog\Response\BlogInfo.cs" />
@@ -81,8 +82,10 @@
     <Compile Include="Installers\ResponseMapperFactoryInstaller.cs" />
     <Compile Include="Mappers\RequestMapperFactory.cs" />
     <Compile Include="Mappers\ResponseMapperFactory.cs" />
+    <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToGetCategoriesRequestMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToGetUserBlogsRequestMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Response\BlogInfoToXmlRpcResponseMapper.cs" />
+    <Compile Include="Mappers\XmlRpc\Response\CategoryInfoToXmlRpcResponseMapper.cs" />
     <Compile Include="Processors\GetUserBlogsProcessor.cs" />
     <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

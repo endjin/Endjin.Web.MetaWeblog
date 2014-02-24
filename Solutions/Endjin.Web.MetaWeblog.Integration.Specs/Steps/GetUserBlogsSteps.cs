@@ -19,62 +19,16 @@
     [Binding]
     public class GetUserBlogsSteps
     {
-        [Given(@"I have a user with an AppKey of ""(.*)""")]
-        public void GivenIHaveAUserWithAnAppKeyOf(string appKey)
+
+        [Given(@"I want to validate that the current user has a valid account with the MetaWeblog service")]
+        public void GivenIWantToValidateThatTheCurrentUserHasAValidAccountWithTheMetaWeblogService()
         {
-            var xmlRpc = new Request { Method = "blogger.getUsersBlogs", Params = new List<RequestParam>() };
+            var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
 
-            var param = new RequestParam { RequestValue = { String = appKey } };
-
-            xmlRpc.Params.Add(param);
+            xmlRpc.Method = "blogger.getUsersBlogs";
 
             ScenarioContext.Current.Set(xmlRpc, Keys.XmlRpcRequest);
         }
 
-        [Given(@"a password ""(.*)""")]
-        public void GivenAPassword(string password)
-        {
-            var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
-
-            var param = new RequestParam { RequestValue = { String = password } };
-
-            xmlRpc.Params.Add(param);
-
-            ScenarioContext.Current.Set(xmlRpc, Keys.XmlRpcRequest);
-        }
-
-        [Given(@"the username ""(.*)""")]
-        public void GivenTheUserName(string username)
-        {
-            var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
-
-            var param = new RequestParam { RequestValue = { String = username } };
-
-            xmlRpc.Params.Add(param);
-
-            ScenarioContext.Current.Set(xmlRpc, Keys.XmlRpcRequest);
-        }
-
-        [When(@"I send the details to the MetaWeblog endpoint")]
-        public void WhenISendTheDetailsToTheMetaWeblogEndpoint()
-        {
-            var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
-
-            var request = HttpRequestMethods.CreateRequest("http://endjin.com/metaweblog", "text/xml", HttpMethod.Post, xmlRpc, new XmlMediaTypeFormatter());
-
-            var client = ScenarioContext.Current.Get<HttpClient>(Keys.HttpClient);
-
-            HttpResponseMessage response = client.SendAsync(request, new CancellationTokenSource().Token).Result;
-
-            ScenarioContext.Current.Set(response, Keys.HttpResponseMessage);
-        }
-
-        [Then(@"I should recieve a valid response")]
-        public void ThenIShouldRecieveAValidResponse()
-        {
-            var response = ScenarioContext.Current.Get<HttpResponseMessage>(Keys.HttpResponseMessage);
-
-            response.StatusCode.ShouldEqual(HttpStatusCode.OK);
-        }
     }
 }

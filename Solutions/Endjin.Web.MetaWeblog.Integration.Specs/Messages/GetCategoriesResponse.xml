@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<methodResponse>
+  <params>
+    <param>
+      <value>
+        <array>
+          <data>
+            <value>
+              <struct>
+                <member>
+                  <name>description</name>
+                  <value>Cloud</value>
+                </member>
+                <member>
+                  <name>categoryid</name>
+                  <value />
+                </member>
+                <member>
+                  <name>title</name>
+                  <value>Cloud</value>
+                </member>
+                <member>
+                  <name>htmlUrl</name>
+                  <value>http://www.endjin.com/blog/category?cloud</value>
+                </member>
+                <member>
+                  <name>rssUrl</name>
+                  <value>http://www.endjin.com/blog/rss?category?cloud</value>
+                </member>
+              </struct>
+            </value>
+            <value>
+              <struct>
+                <member>
+                  <name>description</name>
+                  <value>Virtualisation</value>
+                </member>
+                <member>
+                  <name>categoryid</name>
+                  <value />
+                </member>
+                <member>
+                  <name>title</name>
+                  <value>Virtualisation</value>
+                </member>
+                <member>
+                  <name>htmlUrl</name>
+                  <value>http://www.endjin.com/blog/category?virtualisation</value>
+                </member>
+                <member>
+                  <name>rssUrl</name>
+                  <value>http://www.endjin.com/blog/rss?category?virtualisation</value>
+                </member>
+              </struct>
+            </value>
+          </data>
+        </array>
+      </value>
+    </param>
+  </params>
+</methodResponse>

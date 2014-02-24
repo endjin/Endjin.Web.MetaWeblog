@@ -19,22 +19,21 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("GetUserBlogs")]
-    public partial class GetUserBlogsFeature
+    [NUnit.Framework.DescriptionAttribute("getCategories")]
+    public partial class GetCategoriesFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "GetUserBlogs.feature"
+#line 1 "getCategories.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GetUserBlogs", "In order to validate that the current user has a valid account with the MetaWeblo" +
-                    "g service\r\nAs Windows Live Writer\r\nI want to be provided with valid account deta" +
-                    "ils", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "getCategories", "In order to be able to provide users with a list of blog categories \nAs Windows L" +
+                    "iveWriter\nI want to be provided with a list of all categories for the blog", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -67,24 +66,25 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Request valid account details")]
-        public virtual void RequestValidAccountDetails()
+        [NUnit.Framework.DescriptionAttribute("Request categories for the blog")]
+        [NUnit.Framework.CategoryAttribute("mytag")]
+        public virtual void RequestCategoriesForTheBlog()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Request valid account details", ((string[])(null)));
-#line 6
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Request categories for the blog", new string[] {
+                        "mytag"});
 #line 7
- testRunner.Given("I have a user with an AppKey of \"0123456789ABCDEF\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.And("the username \"Alice\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have a user with an AppKey of \"0123456789ABCDEF\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.And("a password \"Waddicor\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the username \"Alice\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("I want to validate that the current user has a valid account with the MetaWeblog " +
-                    "service", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
- testRunner.When("I send the details to the MetaWeblog endpoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("a password \"Waddicor\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
+ testRunner.And("I want to be able to provide users with a list of blog categories", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.When("I send the details to the MetaWeblog endpoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
  testRunner.Then("I should recieve a valid response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
