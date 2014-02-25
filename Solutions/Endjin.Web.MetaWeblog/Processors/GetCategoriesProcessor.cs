@@ -14,9 +14,7 @@
 
     public class GetCategoriesProcessor : IProcessor<GetCategoriesRequest, List<CategoryInfo>>
     {
-        
         public Task<List<CategoryInfo>> ProcessAsync(GetCategoriesRequest input)
-
         {
             // Note: Your real system integration would happen here.
             return Task.FromResult(new List<CategoryInfo>
