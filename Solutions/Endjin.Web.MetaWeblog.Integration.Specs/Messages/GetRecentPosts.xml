@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<methodResponse>
+  <params>
+    <param>
+      <value>
+        <array>
+          <data>
+            <value>
+              <struct>
+                <member>
+                  <name>postid</name>
+                  <value>
+                    <string>74cd8848-7e3e-4ca5-89fb-8d2bc8819137</string>
+                  </value>
+                </member>
+                <member>
+                  <name>dateCreated</name>
+                  <value>
+                    <dateTime.iso8601>20140224T13:15:35</dateTime.iso8601>
+                  </value>
+                </member>
+                <member>
+                  <name>title</name>
+                  <value>
+                    <string>Another test</string>
+                  </value>
+                </member>
+                <member>
+                  <name>description</name>
+                  <value>
+                    <string>&lt;p&gt;Get the categories please&lt;/p&gt;</string>
+                  </value>
+                </member>
+                <member>
+                  <name>link</name>
+                  <value>
+                    <string>http://atompubtest.azurewebsites.net/post/Another-test</string>
+                  </value>
+                </member>
+                <member>
+                  <name>wp_slug</name>
+                  <value>
+                    <string>Another-test</string>
+                  </value>
+                </member>
+                <member>
+                  <name>mt_excerpt</name>
+                  <value>
+                    <string />
+                  </value>
+                </member>
+                <member>
+                  <name>mt_allow_comments</name>
+                  <value>
+                    <string />
+                  </value>
+                </member>
+                <member>
+                  <name>mt_keywords</name>
+                  <value>
+                    <string />
+                  </value>
+                </member>
+                <member>
+                  <name>publish</name>
+                  <value>
+                    <boolean>0</boolean>
+                  </value>
+                </member>
+              </struct>
+            </value>
+          </data>
+        </array>
+      </value>
+    </param>
+  </params>
+</methodResponse>

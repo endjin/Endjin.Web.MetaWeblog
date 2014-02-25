@@ -35,24 +35,4 @@
             return await this.ProcessAsync((GetCategoriesRequest)input);
         }
     }
-
-    /*
- 
-    Other Processors to implement
-        
-    IEnumerable<Post> GetRecentPosts(string userName, string password, string blogid, int noOfPosts);
-        
-    IEnumerable<CategoryInfo> GetCategories(string userName, string password);
-        
-    int NewPost(string userName, string password, string blogid, Post post);
-        
-    void EditPost(string userName, string password, Post post);
-        
-    Post GetPost(string userName, string password, int postid);
-        
-    void DeletePost(string userName, string password, int postid);
-        
-    MediaObjectInfo NewMediaObject(string userName, string password, MediaObject mediaObject);
-    
-    */
 }

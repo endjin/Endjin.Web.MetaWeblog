@@ -6,7 +6,7 @@
     using Endjin.Web.MetaWeblog.Contracts.Processors;
     using Endjin.Web.MetaWeblog.Processors;
 
-    #endregion 
+    #endregion
 
     public class ProcessorFactoryInstaller : IInstaller
     {
@@ -23,6 +23,7 @@
         {
             processorFactory.RegisterContentFor<GetUserBlogsProcessor>("blogger.getUsersBlogs");
             processorFactory.RegisterContentFor<GetCategoriesProcessor>("metaWeblog.getCategories");
+            processorFactory.RegisterContentFor<GetRecentPostsProcessor>("metaWeblog.getRecentPosts");
         }
 
     }

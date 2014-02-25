@@ -98,6 +98,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getCategories.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\getRecentPosts.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getRecentPosts.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\GetRecentPostsSteps.cs" />
     <Compile Include="HttpRequestMethods.cs" />
     <Compile Include="Features\GetUserBlogs.feature.cs">
       <AutoGen>True</AutoGen>
@@ -119,6 +125,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>getCategories.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\getRecentPosts.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>getRecentPosts.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\GetUserBlogs.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GetUserBlogs.feature.cs</LastGenOutput>
@@ -137,7 +147,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Messages\GetCategoriesResponse.xml" />
+    <Content Include="Messages\GetRecentPosts.xml" />
     <Content Include="Messages\GetUserBlogsResponse.xml" />
+    <Content Include="Messages\ActualGetCategoriesResponse.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

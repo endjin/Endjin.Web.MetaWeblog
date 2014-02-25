@@ -81,6 +81,9 @@
     <Compile Include="Domain\XmlRpc\ResponseParamValue.cs" />
     <Compile Include="Domain\XmlRpc\RequestValue.cs" />
     <Compile Include="Domain\XmlRpc\VersionResult.cs" />
+    <Compile Include="Domain\MetaWeblog\Request\GetRecentPostsRequest.cs" />
+    <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToGetRecentPostsRequestMapper.cs" />
+    <Compile Include="Mappers\XmlRpc\Response\PostToXmlRpcResponseMapper.cs" />
     <Compile Include="Processors\GetCategoriesProcessor.cs" />
     <Compile Include="Installers\RequestMapperFactoryInstaller.cs" />
     <Compile Include="Installers\ProcessorFactoryInstaller.cs" />
@@ -91,6 +94,7 @@
     <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToGetUserBlogsRequestMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Response\BlogInfoToXmlRpcResponseMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Response\CategoryInfoToXmlRpcResponseMapper.cs" />
+    <Compile Include="Processors\GetRecentPostsProcessor.cs" />
     <Compile Include="Processors\GetUserBlogsProcessor.cs" />
     <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
