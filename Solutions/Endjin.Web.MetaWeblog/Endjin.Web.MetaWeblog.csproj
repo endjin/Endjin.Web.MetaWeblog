@@ -67,6 +67,7 @@
     <Compile Include="Domain\MetaWeblog\Response\MediaObjectInfo.cs" />
     <Compile Include="Domain\MetaWeblog\Response\Post.cs" />
     <Compile Include="Domain\MetaWeblog\Response\UserInfo.cs" />
+    <Compile Include="Domain\XmlRpc\MemberValueArray.cs" />
     <Compile Include="Domain\XmlRpc\FaultValue.cs" />
     <Compile Include="Domain\XmlRpc\Member.cs" />
     <Compile Include="Domain\XmlRpc\MemberValue.cs" />

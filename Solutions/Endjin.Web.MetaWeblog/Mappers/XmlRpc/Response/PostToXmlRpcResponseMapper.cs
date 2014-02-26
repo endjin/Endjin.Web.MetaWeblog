@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
 {
@@ -88,15 +89,28 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
                                                     Value = post.publish.ToString()
                                                 }
                                             },
-                                            //new Member
-                                            //{
-                                            //    Name = "categories",
-                                            //    Value = new MemberValue
-                                            //    {
-                                            //        ValueChoice = MemberValue.ValueType.array,
-                                            //        Value = post.categories
-                                            //    }
-                                            //}
+                                            new Member
+                                            {
+                                                Name = "categories",
+                                                Value = new MemberValue
+                                                {
+                                                    MemberValueArray = new MemberValueArray()
+                                                    {
+                                                        Value = GetMemberValuesFromMemberValueArray(post)
+                                                        //Value = new List<MemberValue>
+                                                        //{
+                                                        //    GetMemberValuesFromMemberValueArray(post)//foreach (var xcategory in post.categories)
+                                                            //{
+                                                            //new MemberValue()
+                                                            //{
+                                                            //    ValueChoice = MemberValue.ValueType.@string,
+                                                            //    Value = post.categories[0]
+                                                            //}}
+                                                        //}
+
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -107,6 +121,20 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
             }
 
             return response;
+        }
+
+        private List<MemberValue> GetMemberValuesFromMemberValueArray(Post post)
+        {
+            var memberValueArrayValue = new List<MemberValue>();
+            foreach (var category in post.categories)
+            {
+                memberValueArrayValue.Add(new MemberValue 
+                {
+                    ValueChoice = MemberValue.ValueType.@string,
+                    Value = category
+                });
+            }
+            return memberValueArrayValue;
         }
 
         public object MapFrom(object input)

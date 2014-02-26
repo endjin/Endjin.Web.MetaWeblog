@@ -19,6 +19,7 @@ namespace Endjin.Web.MetaWeblog.Processors
         public Task<List<Post>> ProcessAsync(GetRecentPostsRequest input)
         {
             // Note: Your real system integration would happen here.
+            // We need to check the number of posts requested in the GetRecentPostsRequest
             return Task.FromResult(new List<Post>
             {
                 new Post
@@ -26,9 +27,10 @@ namespace Endjin.Web.MetaWeblog.Processors
                     postid = "blogs/firstblog",
                     dateCreated = DateTime.Parse("5/1/2014 8:30:52 AM", System.Globalization.CultureInfo.InvariantCulture),
                     title = "First Post",
-                    description = "Here's the content of the post. We might even add html, including a link, and a picture in later",
-                    link = "blogs/firstblog",
-                    //Does category need to be a domain object rather than an array? No, the category information provided in response to getRecentPosts is different to CategoryInfo 
+                    //XML RPC puts descriptions in this format: &lt;p&gt;With a paragraph&lt;/p&gt; &lt;p&gt;And a &lt;a href="http://msdn.microsoft.com/en-us/library/aa691090(v=vs.71).aspx"&gt;link&lt;/a&gt;&lt;/p&gt;
+                    //Should I build a helper which maps Vellum format blog content to the XML RPC description string? 
+                    //description = @"&lt;p&gt;With a paragraph&lt;/p&gt; &lt;p&gt;And a &lt;a href=""http://msdn.microsoft.com/en-us/library/aa691090(v=vs.71).aspx""&gt;link&lt;/a&gt;&lt;/p&gt;",
+                    description = "back to a simple description",       link = "blogs/firstblog",
                     categories = new string[]{"Cloud", "Apprenticeships"},
                     publish = false
                 }

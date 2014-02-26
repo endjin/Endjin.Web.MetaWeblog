@@ -25,11 +25,14 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
          XmlElement("string", typeof(string), Namespace = ""),
          XmlElement("datetime", typeof(DateTime), Namespace = ""),
          XmlElement("double", typeof(double), Namespace = ""),
-         XmlElement("base64", typeof(string), Namespace = ""),
-         XmlElement("array", typeof(ArrayList), Namespace = "")]
+         XmlElement("base64", typeof(string), Namespace = "")]
+         //XmlElement("array", typeof(ArrayList), Namespace = "")
         public object Value { get; set; }
 
         [XmlIgnore]
         public virtual ValueType ValueChoice { get; set; }
+
+        [XmlElement("array", Namespace = "")]
+        public MemberValueArray MemberValueArray { get; set; }
     }
 }
