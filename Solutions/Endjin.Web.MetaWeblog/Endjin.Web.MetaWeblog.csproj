@@ -46,6 +46,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Packages\Endjin.Core.Composition.2.2.0.24\lib\Net45\EndjinCoreContainerNet45.dll</HintPath>
     </Reference>
+    <Reference Include="PCLWebUtility">
+      <HintPath>..\..\Packages\PCLWebUtility.1.0.2\Lib\portable-net4+sl4+wp7+win8\PCLWebUtility.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

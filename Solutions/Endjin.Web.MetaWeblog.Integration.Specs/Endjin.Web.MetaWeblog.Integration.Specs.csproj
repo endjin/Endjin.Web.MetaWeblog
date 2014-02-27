@@ -146,10 +146,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Messages\GetRecentPostsTest.xml" />
     <Content Include="Messages\GetCategoriesResponse.xml" />
-    <Content Include="Messages\GetRecentPosts.xml" />
+    <Content Include="Messages\GetRecentPostsAzure.xml" />
+    <Content Include="Messages\GetRecentPostsTest2.xml" />
+    <Content Include="Messages\GetRecentPostsWordPress.xml" />
     <Content Include="Messages\GetUserBlogsResponse.xml" />
-    <Content Include="Messages\ActualGetCategoriesResponse.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

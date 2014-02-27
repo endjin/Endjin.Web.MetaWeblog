@@ -37,7 +37,7 @@
                                                 Name = "url",
                                                 Value = new MemberValue
                                                 {
-                                                    ValueChoice = MemberValue.ValueType.@string,
+                                                    ValueChoice = MemberValue.ValueType.String,
                                                     Value = blogInfo.Url
                                                 }
                                             },
@@ -46,7 +46,7 @@
                                                 Name = "blogid",
                                                 Value = new MemberValue
                                                 {
-                                                    ValueChoice = MemberValue.ValueType.@string,
+                                                    ValueChoice = MemberValue.ValueType.String,
                                                     Value = blogInfo.BlogId
                                                 }
                                             },
@@ -55,7 +55,7 @@
                                                 Name = "blogName",
                                                 Value = new MemberValue
                                                 {
-                                                    ValueChoice = MemberValue.ValueType.@string,
+                                                    ValueChoice = MemberValue.ValueType.String,
                                                     Value = blogInfo.BlogName
                                                 }
                                             }

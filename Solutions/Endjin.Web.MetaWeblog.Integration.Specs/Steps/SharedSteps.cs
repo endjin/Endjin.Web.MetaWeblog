@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading;
+using System.Xml.Serialization;
 using Endjin.Web.MetaWeblog.Domain.XmlRpc;
 using Should;
 using TechTalk.SpecFlow;
@@ -65,13 +67,25 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
             ScenarioContext.Current.Set(response, Keys.HttpResponseMessage);
         }
 
-        [Then(@"I should recieve a valid response")]
-        public void ThenIShouldRecieveAValidResponse()
+        [Then(@"I should receive a valid response")]
+        public void ThenIShouldReceiveAValidResponse()
         {
             var response = ScenarioContext.Current.Get<HttpResponseMessage>(Keys.HttpResponseMessage);
 
             response.StatusCode.ShouldEqual(HttpStatusCode.OK);
             //Why isn't there an 'Assert' here? 
         }
+
+        //public void ThenIShouldHaveAValidXmlResponse()
+        //{            
+        //    var response = ScenarioContext.Current.Get<HttpResponseMessage>(Keys.HttpResponseMessage);
+        //    var serializer = new XmlSerializer(typeof (Response));
+        //    var xml = serializer.Serialize(stream, response.Content);
+
+        //    var xmlFormatter = new XmlMediaTypeFormatter();
+        //    xmlFormatter.UseXmlSerializer = true;
+        //    xmlFormatter.SetSerializer<Request>(new XmlSerializer(typeof(Request)));
+        //    xmlFormatter.SetSerializer<Response>(new XmlSerializer(typeof(Response)));
+        //}
     }
 }

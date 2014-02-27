@@ -11,5 +11,5 @@ Scenario: Request categories for the blog
 	#Should I provide a list of blog categories here, or will we actually retrieve the categories in the test? At the moment these details are being provided in the processor
 	And I want to be able to provide users with a list of blog categories 
 	When I send the details to the MetaWeblog endpoint
-	Then I should recieve a valid response
+	Then I should receive a valid response
 	#Should I say (& test) what will be in the response? 

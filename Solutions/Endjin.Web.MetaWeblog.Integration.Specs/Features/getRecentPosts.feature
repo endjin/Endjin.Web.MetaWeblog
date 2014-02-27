@@ -11,5 +11,5 @@ Scenario: Request recent posts for a blog
 	#Should I provide a list of blog posts here? At the moment these details are being provided in the processor
 	And I want to be able to provide users with details of the previous blog post
 	When I send the details to the MetaWeblog endpoint
-	Then I should recieve a valid response
+	Then I should receive a valid response
 	#Should I say (& test) what will be in the response? 

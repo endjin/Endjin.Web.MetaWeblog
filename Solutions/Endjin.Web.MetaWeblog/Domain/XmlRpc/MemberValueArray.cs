@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Xml;
+
 namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
 {
     #region Using Directives
@@ -14,7 +17,7 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
             this.Value = new List<MemberValue>();
         }
 
-        [XmlElement("data", Namespace = "")]
+        [XmlArray("data", Namespace = ""), XmlArrayItem("value", Namespace = "")]
         public List<MemberValue> Value { get; set; }
     }
 }

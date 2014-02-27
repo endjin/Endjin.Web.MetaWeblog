@@ -39,7 +39,7 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
                                                 Name = "description",
                                                 Value = new MemberValue
                                                 {
-                                                    ValueChoice = MemberValue.ValueType.@string,
+                                                    ValueChoice = MemberValue.ValueType.String,
                                                     Value = categoryInfo.description
                                                 }
                                             },
@@ -48,7 +48,7 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
                                                 Name = "categoryid",
                                                 Value = new MemberValue
                                                 {
-                                                    ValueChoice = MemberValue.ValueType.@string,
+                                                    ValueChoice = MemberValue.ValueType.String,
                                                     Value = categoryInfo.categoryid.ToString(CultureInfo.InvariantCulture)
                                                 }
                                             },
@@ -57,7 +57,7 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
                                                 Name = "title",
                                                 Value = new MemberValue
                                                 {
-                                                    ValueChoice = MemberValue.ValueType.@string,
+                                                    ValueChoice = MemberValue.ValueType.String,
                                                     Value = categoryInfo.title
                                                 }
                                             },
@@ -66,7 +66,7 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
                                                 Name = "htmlUrl",
                                                 Value = new MemberValue
                                                 {
-                                                    ValueChoice = MemberValue.ValueType.@string,
+                                                    ValueChoice = MemberValue.ValueType.String,
                                                     Value = categoryInfo.htmlUrl
                                                 }
                                             },
@@ -75,7 +75,7 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
                                                 Name = "rssUrl",
                                                 Value = new MemberValue
                                                 {
-                                                    ValueChoice = MemberValue.ValueType.@string,
+                                                    ValueChoice = MemberValue.ValueType.String,
                                                     Value = categoryInfo.rssUrl
                                                 }
                                             }
