@@ -1,13 +1,11 @@
-using System.ComponentModel;
-using System.Reflection;
+using System;
+using System.Xml.Serialization;
 
 namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
 {
     #region Using Directives
 
-    using System;
-    using System.Collections;
-    using System.Xml.Serialization;
+    
 
     #endregion
 
@@ -15,19 +13,19 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
     {
         public enum ValueType
         {
-            [XmlEnumAttribute("array")]
+            [XmlEnum("array")]
             Array,
-            [XmlEnumAttribute("string")]
+            [XmlEnum("string")]
             String,
-            [XmlEnumAttribute("int")]
+            [XmlEnum("int")]
             Int,
-            [XmlEnumAttribute("datetime")]
+            [XmlEnum("datetime")]
             DateTime,
-            [XmlEnumAttribute("dateTime.iso8601")]
+            [XmlEnum("dateTime.iso8601")]
             Iso8601,
-            [XmlEnumAttribute("double")]
+            [XmlEnum("double")]
             Double,
-            [XmlEnumAttribute("base64")]
+            [XmlEnum("base64")]
             Base64
         }
 

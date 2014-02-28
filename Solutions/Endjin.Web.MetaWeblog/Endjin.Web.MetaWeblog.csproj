@@ -64,28 +64,31 @@
     <Compile Include="Contracts\Processors\IProcessorFactory.cs" />
     <Compile Include="Domain\MetaWeblog\Request\GetCategoriesRequest.cs" />
     <Compile Include="Domain\MetaWeblog\Request\GetUserBlogsRequest.cs" />
+    <Compile Include="Domain\MetaWeblog\Request\NewPostRequest.cs" />
     <Compile Include="Domain\MetaWeblog\Response\CategoryInfo.cs" />
     <Compile Include="Domain\MetaWeblog\Response\BlogInfo.cs" />
     <Compile Include="Domain\MetaWeblog\Response\MediaObject.cs" />
     <Compile Include="Domain\MetaWeblog\Response\MediaObjectInfo.cs" />
     <Compile Include="Domain\MetaWeblog\Response\Post.cs" />
     <Compile Include="Domain\MetaWeblog\Response\UserInfo.cs" />
-    <Compile Include="Domain\XmlRpc\MemberValueArray.cs" />
+    <Compile Include="Domain\XmlRpc\Fault.cs" />
     <Compile Include="Domain\XmlRpc\FaultValue.cs" />
     <Compile Include="Domain\XmlRpc\Member.cs" />
     <Compile Include="Domain\XmlRpc\MemberValue.cs" />
-    <Compile Include="Domain\XmlRpc\Fault.cs" />
-    <Compile Include="Domain\XmlRpc\RequestParam.cs" />
+    <Compile Include="Domain\XmlRpc\MemberValueArray.cs" />
     <Compile Include="Domain\XmlRpc\Request.cs" />
+    <Compile Include="Domain\XmlRpc\RequestDataItem.cs" />
+    <Compile Include="Domain\XmlRpc\RequestParam.cs" />
+    <Compile Include="Domain\XmlRpc\RequestParamValue.cs" />
+    <Compile Include="Domain\XmlRpc\RequestValue.cs" />
     <Compile Include="Domain\XmlRpc\Response.cs" />
     <Compile Include="Domain\XmlRpc\ResponseData.cs" />
     <Compile Include="Domain\XmlRpc\ResponseDataItem.cs" />
     <Compile Include="Domain\XmlRpc\ResponseParam.cs" />
     <Compile Include="Domain\XmlRpc\ResponseParams.cs" />
     <Compile Include="Domain\XmlRpc\ResponseParamValue.cs" />
-    <Compile Include="Domain\XmlRpc\RequestValue.cs" />
-    <Compile Include="Domain\XmlRpc\VersionResult.cs" />
     <Compile Include="Domain\MetaWeblog\Request\GetRecentPostsRequest.cs" />
+    <Compile Include="Domain\XmlRpc\VersionResult.cs" />
     <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToGetRecentPostsRequestMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Response\PostToXmlRpcResponseMapper.cs" />
     <Compile Include="Processors\GetCategoriesProcessor.cs" />
@@ -104,7 +107,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\XmlRpc\Request\" />
+    <Folder Include="Domain\XmlRpc\Response\" />
+    <Folder Include="Domain\XmlRpc\Shared\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

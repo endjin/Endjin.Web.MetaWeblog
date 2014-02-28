@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<methodCall>
+  <methodName>metaWeblog.newPost</methodName>
+  <params>
+    <param>
+      <value>
+        <string>1</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>Alice</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>Waddicor</string>
+      </value>
+    </param>
+    <param>
+      <value>
+                              
+      </value>
+    </param>
+    <param>
+      <value>
+        <boolean>1</boolean>
+      </value>
+    </param>
+  </params>
+</methodCall>

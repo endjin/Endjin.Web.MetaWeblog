@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Globalization;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
 using System.Text;
@@ -9,6 +7,8 @@ using System.Xml.Serialization;
 using Endjin.Web.MetaWeblog.Domain.XmlRpc;
 using Endjin.Web.MetaWeblog.Integration.Specs.Steps;
 using TechTalk.SpecFlow;
+using Request = Endjin.Web.MetaWeblog.Domain.XmlRpc.Request;
+using RequestParam = Endjin.Web.MetaWeblog.Domain.XmlRpc.RequestParam;
 
 namespace Endjin.Web.MetaWeblog.Integration.Specs
 {
@@ -23,15 +23,22 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs
 
             xmlRpc.Method = "metaWeblog.getRecentPosts";
 
-            var param = new RequestParam { RequestValue = { String = "1" } };
+            var param = new RequestParam
+            {
+                RequestValue =
+                {
+                    ValueChoice = MemberValue.ValueType.String,
+                    Value = "1"
+                }
+            };
 
             xmlRpc.Params.Add(param);
 
             ScenarioContext.Current.Set(xmlRpc, Keys.XmlRpcRequest);
         }
 
-        [Then(@"the request should contain details of recent posts, in the format that I expect")]
-        public void ThenTheRequestShouldContainDetailsOfRecentPostsInTheFormatThatIExpect()
+        [Then(@"the response should contain details of recent posts, in the format that I expect")]
+        public void ThenTheResponseShouldContainDetailsOfRecentPostsInTheFormatThatIExpect()
         {
             var httpResponseMessage = ScenarioContext.Current.Get<HttpResponseMessage>(Keys.HttpResponseMessage);
             var response = httpResponseMessage.Content.ReadAsAsync<Response>().Result;

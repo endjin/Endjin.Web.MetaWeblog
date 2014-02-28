@@ -1,8 +1,11 @@
+using System.Xml.Serialization;
+using Endjin.Core.Installers;
+
 namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
 {
     #region Using Directives
 
-    using System.Xml.Serialization;
+    
 
     #endregion 
 
@@ -15,5 +18,8 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
 
         [XmlElement("value", Namespace = "")]
         public RequestValue RequestValue { get; set; }
+
+        //[XmlElement("value", Namespace = "")]
+        //public MemberValue MemberValue { get; set; }
     }
 }

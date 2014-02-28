@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Globalization;
+using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices.ComTypes;
 
@@ -16,9 +17,9 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
     #endregion
     public class PostToXmlRpcResponseMapper : IMapper<List<Post>, Response>
     {
-        public Domain.XmlRpc.Response MapFrom(List<Post> input)
+        public Response MapFrom(List<Post> input)
         {
-            var response = new Domain.XmlRpc.Response();
+            var response = new Response();
 
             foreach (var post in input)
             {
@@ -100,7 +101,13 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
                                                 Value = new MemberValue
                                                 {
                                                     ValueChoice = MemberValue.ValueType.Array,
-                                                    Value = GetCategories(post)
+                                                    Value = new MemberValueArray
+                                                    {
+                                                        Value = post.categories.Select(category => new MemberValue
+                                                        {
+                                                            ValueChoice = MemberValue.ValueType.String, Value = category
+                                                        }).ToList()
+                                                    }
                                                 }
                                             }
                                         }
@@ -113,31 +120,6 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
             }
 
             return response;
-        }
-
-        private MemberValueArray GetCategories(Post post)
-        {
-            var categories = GetMemberValuesFromMemberValueArray(post);
-            var array = new MemberValueArray()
-            {
-                Value = categories
-            };
-
-            return array;
-        }
-
-        private List<MemberValue> GetMemberValuesFromMemberValueArray(Post post)
-        {
-            var memberValueArrayValue = new List<MemberValue>();
-            foreach (var category in post.categories)
-            {
-                memberValueArrayValue.Add(new MemberValue 
-                {
-                    ValueChoice = MemberValue.ValueType.String,
-                    Value = category
-                });
-            }
-            return memberValueArrayValue;
         }
 
         public object MapFrom(object input)

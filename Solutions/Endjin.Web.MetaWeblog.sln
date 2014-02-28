@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endjin.Web.MetaWeblog.WebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endjin.Web.MetaWeblog.Integration.Specs", "Endjin.Web.MetaWeblog.Integration.Specs\Endjin.Web.MetaWeblog.Integration.Specs.csproj", "{D444CD62-4951-4AB8-894C-22DC130F8B24}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{6B6C69ED-51DE-460B-8742-264A76F7C3BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{D444CD62-4951-4AB8-894C-22DC130F8B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D444CD62-4951-4AB8-894C-22DC130F8B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D444CD62-4951-4AB8-894C-22DC130F8B24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B6C69ED-51DE-460B-8742-264A76F7C3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B6C69ED-51DE-460B-8742-264A76F7C3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B6C69ED-51DE-460B-8742-264A76F7C3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B6C69ED-51DE-460B-8742-264A76F7C3BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

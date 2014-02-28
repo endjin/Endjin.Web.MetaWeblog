@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -22,9 +21,18 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
         [Given(@"I have a user with an AppKey of ""(.*)""")]
         public void GivenIHaveAUserWithAnAppKeyOf(string appKey)
         {
-            var xmlRpc = new Request { Method = "blogger.getUsersBlogs", Params = new List<RequestParam>() };
+            var xmlRpc = new Request { Params = new List<RequestParam>() };
 
-            var param = new RequestParam { RequestValue = { String = appKey } };
+            //var param = new RequestParam { RequestValue = { String = appKey } };
+
+            var param = new RequestParam
+            {
+                RequestValue =
+                {
+                    ValueChoice = MemberValue.ValueType.String,
+                    Value = appKey
+                }
+            };
 
             xmlRpc.Params.Add(param);
 
@@ -36,7 +44,14 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
         {
             var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
 
-            var param = new RequestParam { RequestValue = { String = password } };
+            var param = new RequestParam
+            {
+                RequestValue =
+                    {
+                        ValueChoice = MemberValue.ValueType.String,
+                        Value = password
+                    }
+            };
 
             xmlRpc.Params.Add(param);
 
@@ -48,7 +63,33 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
         {
             var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
 
-            var param = new RequestParam { RequestValue = { String = username } };
+            var param = new RequestParam
+            {
+                RequestValue =
+                {
+                    ValueChoice = MemberValue.ValueType.String,
+                    Value = username
+                }
+            };
+
+            xmlRpc.Params.Add(param);
+
+            ScenarioContext.Current.Set(xmlRpc, Keys.XmlRpcRequest);
+        }
+
+        [Given(@"the blogId is (.*)")]
+        public void GivenTheBlogIdIs(int blogId)
+        {
+            var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
+
+            var param = new RequestParam
+            {
+                RequestValue =
+                {
+                    ValueChoice = MemberValue.ValueType.String,
+                    Value = blogId.ToString(CultureInfo.InvariantCulture)
+                }
+            };
 
             xmlRpc.Params.Add(param);
 
@@ -61,6 +102,17 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
             var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
 
             var request = HttpRequestMethods.CreateRequest("http://endjin.com/metaweblog", "text/xml", HttpMethod.Post, xmlRpc, new XmlMediaTypeFormatter());
+
+            //To let me check if the Request object has been constructed correctly - testing the test!
+            var xmlRpcRequest = request.Content.ReadAsAsync<Request>().Result;
+
+            using (MemoryStream stream = new MemoryStream())
+            {
+                var serializer = new XmlSerializer(typeof(Request));
+                serializer.Serialize(XmlWriter.Create(stream), xmlRpcRequest);
+                Debug.WriteLine(Encoding.UTF8.GetString(stream.ToArray()));
+                stream.Flush();
+            }
 
             var client = ScenarioContext.Current.Get<HttpClient>(Keys.HttpClient);
 

@@ -88,7 +88,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 14
  testRunner.Then("I should receive a valid response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 15
- testRunner.And("the request should contain details of recent posts, in the format that I expect", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the response should contain details of recent posts, in the format that I expect", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
