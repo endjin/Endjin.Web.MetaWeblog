@@ -50,9 +50,10 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
                                                 Name = "dateCreated",
                                                 Value = new MemberValue
                                                 {
-                                                    ValueChoice = MemberValue.ValueType.DateTime,
-                                                    Value = post.dateCreated
-                                                    //Value = post.dateCreated.ToString("yyyy-MM-ddTHH:mm:ss")
+                                                    //ValueChoice = MemberValue.ValueType.DateTime,
+                                                    //Value = post.dateCreated
+                                                    ValueChoice = MemberValue.ValueType.Iso8601,
+                                                    Value = post.dateCreated.ToString("yyyy-MM-ddTHH:mm:ss")
                                                 }
                                             },
                                             new Member
