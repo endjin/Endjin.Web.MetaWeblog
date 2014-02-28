@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading;
+using System.Xml;
 using System.Xml.Serialization;
 using Endjin.Web.MetaWeblog.Domain.XmlRpc;
 using Should;
@@ -75,17 +77,5 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
             response.StatusCode.ShouldEqual(HttpStatusCode.OK);
             //Why isn't there an 'Assert' here? 
         }
-
-        //public void ThenIShouldHaveAValidXmlResponse()
-        //{            
-        //    var response = ScenarioContext.Current.Get<HttpResponseMessage>(Keys.HttpResponseMessage);
-        //    var serializer = new XmlSerializer(typeof (Response));
-        //    var xml = serializer.Serialize(stream, response.Content);
-
-        //    var xmlFormatter = new XmlMediaTypeFormatter();
-        //    xmlFormatter.UseXmlSerializer = true;
-        //    xmlFormatter.SetSerializer<Request>(new XmlSerializer(typeof(Request)));
-        //    xmlFormatter.SetSerializer<Response>(new XmlSerializer(typeof(Response)));
-        //}
     }
 }
