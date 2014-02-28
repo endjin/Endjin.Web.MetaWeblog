@@ -150,7 +150,7 @@
     <Content Include="Messages\Samples\GetRecentPostsResponseAzure.xml" />
     <Content Include="Messages\Samples\GetRecentPostsResponseWordPress.xml" />
     <Content Include="Messages\Samples\GetUserBlogsResponse.xml" />
-    <Content Include="Messages\TestOutput\GetRecentPosts.xml" />
+    <Content Include="Messages\TestOutput\GetRecentPostsTest.xml" />
     <Content Include="wlrmanifest.xml">
       <SubType>Designer</SubType>
     </Content>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 
 namespace Endjin.Web.MetaWeblog.Processors
 {
@@ -27,8 +28,7 @@ namespace Endjin.Web.MetaWeblog.Processors
                     postid = "blogs/firstblog",
                     dateCreated = DateTime.Parse("5/1/2014 8:30:52 AM", System.Globalization.CultureInfo.InvariantCulture),
                     title = "First Post",
-                    //description = "<p>back to a simple description including a <a href=\"http://www.thing.com/\">link</a></p>",       
-                    description = "<p>back to a simple description</p>",       
+                    description = PCLWebUtility.WebUtility.HtmlEncode("<p>back to a simple description including a <a href=\"http://www.thing.com/\">link</a></p>").Replace("\"", "&quot;"),
                     link = "blogs/firstblog",
                     categories = new string[]{"Cloud", "Apprenticeships"},
                     publish = false

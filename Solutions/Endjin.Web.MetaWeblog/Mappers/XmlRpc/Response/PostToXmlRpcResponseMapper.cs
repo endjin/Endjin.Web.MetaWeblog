@@ -71,7 +71,8 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
                                                 Value = new MemberValue
                                                 {
                                                     ValueChoice = MemberValue.ValueType.String,
-                                                    Value = PCLWebUtility.WebUtility.HtmlEncode(post.description)
+                                                    //Value = PCLWebUtility.WebUtility.HtmlEncode(post.description)
+                                                    Value = post.description
                                                 }
                                             },
                                             new Member
