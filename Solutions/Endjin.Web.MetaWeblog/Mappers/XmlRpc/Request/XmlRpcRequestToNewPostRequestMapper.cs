@@ -19,16 +19,16 @@
         {
             return new NewPostRequest
             {
-                BlogId = input.Params.ElementAt(0).RequestValue.Value.ToString(),
-                AppKey = input.Params.ElementAt(1).RequestValue.Value.ToString(),
-                UserName = input.Params.ElementAt(2).RequestValue.Value.ToString(),
-                Password = input.Params.ElementAt(3).RequestValue.Value.ToString(),
-                title = input.Params.ElementAt(6).RequestValue.Value.ToString(),
-                description = PCLWebUtility.WebUtility.HtmlEncode(input.Params.ElementAt(7).RequestValue.Value.ToString()).Replace("\"", "&quot;"),
-                link = "http://www.endjin.com/blogs/" + input.Params.ElementAt(8).RequestValue.Value.ToString(),
+                BlogId = input.Params.ElementAt(3).RequestValue.Value.ToString(),
+                AppKey = input.Params.ElementAt(0).RequestValue.Value.ToString(),
+                UserName = input.Params.ElementAt(1).RequestValue.Value.ToString(),
+                Password = input.Params.ElementAt(2).RequestValue.Value.ToString(),
+                title = input.Params.ElementAt(4).RequestValue.Value.ToString(),
+                //description = PCLWebUtility.WebUtility.HtmlEncode(input.Params.ElementAt(7).RequestValue.Value.ToString()).Replace("\"", "&quot;"),
+                //link = "http://www.endjin.com/blogs/" + input.Params.ElementAt(8).RequestValue.Value.ToString(),
                 //Need to loop through categories...
                 //categories[] = input.Params.ElementAt(8).RequestValue.Value.ToString(),
-                Publish = input.Params.ElementAt(11).RequestValue.Value.ToString()
+                Publish = input.Params.ElementAt(5).RequestValue.Value.ToString()
             };
         }
 

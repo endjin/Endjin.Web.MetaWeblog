@@ -13,34 +13,27 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
     public class NewPostSteps
     {
 
-        [Given(@"I want to be able to add a new blog post to the site, with the following content:")]
-        public void GivenIWantToBeAbleToAddANewBlogPostToTheSiteWithTheFollowingContent(Table table)
+        [Given(@"I want to be able to add a new blog post to the site, with the title ""(.*)"", the description ""(.*)"", and the categories ""(.*)""")]
+        public void GivenIWantToBeAbleToAddANewBlogPostToTheSiteWithTheTitleTheDescriptionAndTheCategories(string title, string description, string categories)
         {
             var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
 
             xmlRpc.Method = "metaWeblog.newPost";
 
-            //Add post details to the XmlRpc Request
-            var newPostDetails = table.CreateSet<String>().ToList();
-
-            var title = newPostDetails[0];
-            var description = newPostDetails[1];
-            var categories = newPostDetails[3];
-
             var param = new RequestParam
+            {
+                RequestValue =
                 {
-                    RequestValue =
-                    {
-                        ValueChoice = MemberValue.ValueType.String,
-                        Value = ""
-                    }
-                };
+                    ValueChoice = MemberValue.ValueType.String,
+                    Value = title
+                }
+            };
 
             xmlRpc.Params.Add(param);
 
             ScenarioContext.Current.Set(xmlRpc, Keys.XmlRpcRequest);
         }
-
+        
         [Given(@"it should be added as a draft")]
         public void GivenItShouldBeAddedAsADraft()
         {

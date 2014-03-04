@@ -80,26 +80,15 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("a password \"Waddicor\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
  testRunner.And("the blogId is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "title",
-                        "description",
-                        "categories"});
-            table1.AddRow(new string[] {
-                        "Blog 1",
-                        "Here\'s the content",
-                        "cloud, apprenticeships"});
 #line 12
- testRunner.And("I want to be able to add a new blog post to the site, with the following content:" +
-                    "", ((string)(null)), table1, "And ");
-#line 15
+ testRunner.And("I want to be able to add a new blog post to the site, with the title \"Blog 1\", th" +
+                    "e description \"Here\'s the content\", and the categories \"cloud, apprenticeships\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
  testRunner.And("it should be added as a draft", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
+#line 14
  testRunner.When("I send the details to the MetaWeblog endpoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
+#line 15
  testRunner.Then("I should receive a valid response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 18
- testRunner.And("the post should be added to the site as a draft", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -109,34 +98,25 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void AddANewBlogPostToTheSiteAndPublishIt()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a new blog post to the site and publish it", ((string[])(null)));
-#line 20
+#line 18
 this.ScenarioSetup(scenarioInfo);
-#line 22
+#line 20
  testRunner.Given("I have a user with an AppKey of \"0123456789ABCDEF\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 23
+#line 21
  testRunner.Given("the username \"Alice\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 24
+#line 22
  testRunner.And("a password \"Waddicor\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 25
+#line 23
  testRunner.And("the blogId is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "title",
-                        "description"});
-            table2.AddRow(new string[] {
-                        "Blog 1",
-                        "Here\'s the content"});
-#line 26
- testRunner.And("I want to be able to add a new blog post to the site, with the following content:" +
-                    "", ((string)(null)), table2, "And ");
-#line 29
+#line 24
+ testRunner.And("I want to be able to add a new blog post to the site, with the title \"Blog 1\", th" +
+                    "e description \"Here\'s the content\", and the categories \"cloud, apprenticeships\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
  testRunner.And("it should be published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
+#line 26
  testRunner.When("I send the details to the MetaWeblog endpoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
+#line 27
  testRunner.Then("I should receive a valid response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
- testRunner.And("the post should be added to the site and published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

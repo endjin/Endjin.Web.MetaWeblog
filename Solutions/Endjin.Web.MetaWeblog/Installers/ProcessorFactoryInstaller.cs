@@ -24,7 +24,7 @@
             processorFactory.RegisterContentFor<GetUserBlogsProcessor>("blogger.getUsersBlogs");
             processorFactory.RegisterContentFor<GetCategoriesProcessor>("metaWeblog.getCategories");
             processorFactory.RegisterContentFor<GetRecentPostsProcessor>("metaWeblog.getRecentPosts");
-            processorFactory.RegisterContentFor<GetRecentPostsProcessor>("metaWeblog.newPost");
+            processorFactory.RegisterContentFor<NewPostProcessor>("metaWeblog.newPost");
         }
 
     }
