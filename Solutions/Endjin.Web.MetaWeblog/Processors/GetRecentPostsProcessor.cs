@@ -1,13 +1,11 @@
-﻿using System;
-using System.Net;
-
-namespace Endjin.Web.MetaWeblog.Processors
+﻿namespace Endjin.Web.MetaWeblog.Processors
 {
     #region Using Directives
 
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
+    using System;
+    using System.Net;
     using Endjin.Web.MetaWeblog.Contracts.Mappers;
     using Endjin.Web.MetaWeblog.Contracts.Processors;
     using Endjin.Web.MetaWeblog.Domain.MetaWeblog.Request;

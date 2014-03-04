@@ -25,6 +25,7 @@
             requestMapperFactory.RegisterContentFor<XmlRpcRequestToGetUserBlogsRequestMapper>("blogger.getUsersBlogs");
             requestMapperFactory.RegisterContentFor<XmlRpcRequestToGetCategoriesRequestMapper>("metaWeblog.getCategories");
             requestMapperFactory.RegisterContentFor<XmlRpcRequestToGetRecentPostsRequestMapper>("metaWeblog.getRecentPosts");
+            requestMapperFactory.RegisterContentFor<XmlRpcRequestToGetRecentPostsRequestMapper>("metaWeblog.newPost");
         }
     }
 }

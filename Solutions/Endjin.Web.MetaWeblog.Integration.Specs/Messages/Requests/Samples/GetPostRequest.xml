@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<methodCall>
+  <methodName>metaWeblog.getPost</methodName>
+  <params>
+    <param>
+      <value>
+        <string>52010c70-92c4-4ba9-8b1e-99a6f031c94f</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>admin</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>endj1n</string>
+      </value>
+    </param>
+  </params>
+</methodCall>

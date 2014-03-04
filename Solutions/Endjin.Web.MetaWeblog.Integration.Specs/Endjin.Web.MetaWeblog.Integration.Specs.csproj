@@ -156,12 +156,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Messages\Requests\Samples\GetCategoriesRequest.xml" />
+    <Content Include="Messages\Requests\Samples\GetPostRequest.xml" />
+    <Content Include="Messages\Requests\Samples\GetUserBlogsRequest.xml" />
     <Content Include="Messages\Responses\Samples\GetCategoriesResponse.xml" />
+    <Content Include="Messages\Responses\Samples\GetPostResponse.xml" />
     <Content Include="Messages\Responses\Samples\GetRecentPostsResponseAzure.xml" />
     <Content Include="Messages\Responses\Samples\GetRecentPostsResponseWordPress.xml" />
     <Content Include="Messages\Responses\Samples\GetUserBlogsResponse.xml" />
     <Content Include="Messages\Requests\Samples\NewPostRequest.xml" />
     <Content Include="Messages\Requests\Samples\﻿GetRecentPostsRequest.xml" />
+    <Content Include="Messages\Responses\Samples\NewPostResponse.xml" />
     <Content Include="Messages\Responses\TestOutput\GetRecentPostsResponse.xml" />
     <Content Include="wlrmanifest.xml">
       <SubType>Designer</SubType>

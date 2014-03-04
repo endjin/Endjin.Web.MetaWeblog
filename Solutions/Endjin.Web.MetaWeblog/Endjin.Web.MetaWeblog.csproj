@@ -70,6 +70,7 @@
     <Compile Include="Domain\MetaWeblog\Response\MediaObject.cs" />
     <Compile Include="Domain\MetaWeblog\Response\MediaObjectInfo.cs" />
     <Compile Include="Domain\MetaWeblog\Response\Post.cs" />
+    <Compile Include="Domain\MetaWeblog\Response\PostId.cs" />
     <Compile Include="Domain\MetaWeblog\Response\UserInfo.cs" />
     <Compile Include="Domain\XmlRpc\Fault.cs" />
     <Compile Include="Domain\XmlRpc\FaultValue.cs" />
@@ -90,7 +91,9 @@
     <Compile Include="Domain\MetaWeblog\Request\GetRecentPostsRequest.cs" />
     <Compile Include="Domain\XmlRpc\VersionResult.cs" />
     <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToGetRecentPostsRequestMapper.cs" />
+    <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToNewPostRequestMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Response\PostToXmlRpcResponseMapper.cs" />
+    <Compile Include="Mappers\XmlRpc\Response\PostIdToXmlRpcResponseMapper.cs" />
     <Compile Include="Processors\GetCategoriesProcessor.cs" />
     <Compile Include="Installers\RequestMapperFactoryInstaller.cs" />
     <Compile Include="Installers\ProcessorFactoryInstaller.cs" />
@@ -103,6 +106,7 @@
     <Compile Include="Mappers\XmlRpc\Response\CategoryInfoToXmlRpcResponseMapper.cs" />
     <Compile Include="Processors\GetRecentPostsProcessor.cs" />
     <Compile Include="Processors\GetUserBlogsProcessor.cs" />
+    <Compile Include="Processors\NewPostProcessor.cs" />
     <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

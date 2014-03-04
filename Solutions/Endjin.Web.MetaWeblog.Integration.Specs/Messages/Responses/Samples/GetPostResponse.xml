@@ -1,25 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<methodCall>
-  <methodName>metaWeblog.newPost</methodName>
+<methodResponse>
   <params>
     <param>
       <value>
-        <string>http://atompubtest.azurewebsites.net/</string>
-      </value>
-    </param>
-    <param>
-      <value>
-        <string>admin</string>
-      </value>
-    </param>
-    <param>
-      <value>
-        <string>endj1n</string>
-      </value>
-    </param>
-    <param>
-      <value>
         <struct>
+          <member>
+            <name>postid</name>
+            <value>
+              <string>52010c70-92c4-4ba9-8b1e-99a6f031c94f</string>
+            </value>
+          </member>
           <member>
             <name>title</name>
             <value>
@@ -33,19 +23,43 @@
             </value>
           </member>
           <member>
-            <name>mt_keywords</name>
+            <name>link</name>
             <value>
-              <string />
+              <string>http://atompubtest.azurewebsites.net/post/A-new-post</string>
             </value>
           </member>
           <member>
             <name>wp_slug</name>
             <value>
+              <string>A-new-post</string>
+            </value>
+          </member>
+          <member>
+            <name>mt_excerpt</name>
+            <value>
               <string />
             </value>
           </member>
           <member>
-            <name>mt_basename</name>
+            <name>mt_allow_comments</name>
+            <value>
+              <int>1</int>
+            </value>
+          </member>
+          <member>
+            <name>dateCreated</name>
+            <value>
+              <dateTime.iso8601>20140303T18:38:06</dateTime.iso8601>
+            </value>
+          </member>
+          <member>
+            <name>publish</name>
+            <value>
+              <boolean>0</boolean>
+            </value>
+          </member>
+          <member>
+            <name>mt_keywords</name>
             <value>
               <string />
             </value>
@@ -62,19 +76,8 @@
               </array>
             </value>
           </member>
-          <member>
-            <name>mt_excerpt</name>
-            <value>
-              <string />
-            </value>
-          </member>
         </struct>
       </value>
     </param>
-    <param>
-      <value>
-        <boolean>0</boolean>
-      </value>
-    </param>
   </params>
-</methodCall>
+</methodResponse>
