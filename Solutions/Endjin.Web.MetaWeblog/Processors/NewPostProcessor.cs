@@ -35,7 +35,7 @@
             {
                 new PostId
                 {
-                   Id = "holder",
+                   Id = "/blogs/blog1",
                 }
             });
         }

@@ -159,6 +159,7 @@
     <Content Include="Messages\Requests\Samples\GetCategoriesRequest.xml" />
     <Content Include="Messages\Requests\Samples\GetPostRequest.xml" />
     <Content Include="Messages\Requests\Samples\GetUserBlogsRequest.xml" />
+    <Content Include="Messages\Requests\TestOutput\NewPostRequest.xml" />
     <Content Include="Messages\Responses\Samples\GetCategoriesResponse.xml" />
     <Content Include="Messages\Responses\Samples\GetPostResponse.xml" />
     <Content Include="Messages\Responses\Samples\GetRecentPostsResponseAzure.xml" />
@@ -172,9 +173,7 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Messages\Requests\TestOutput\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

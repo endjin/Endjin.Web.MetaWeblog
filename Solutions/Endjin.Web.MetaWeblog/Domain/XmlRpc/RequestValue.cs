@@ -13,24 +13,6 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
 
     public class RequestValue
     {
-        //public enum ValueType
-        //{
-        //    [XmlEnum("array")]
-        //    Array,
-        //    [XmlEnum("string")]
-        //    String,
-        //    [XmlEnum("int")]
-        //    Int,
-        //    [XmlEnum("datetime")]
-        //    DateTime,
-        //    [XmlEnum("dateTime.iso8601")]
-        //    Iso8601,
-        //    [XmlEnum("double")]
-        //    Double,
-        //    [XmlEnum("base64")]
-        //    Base64
-        //}
-
         [XmlChoiceIdentifier("ValueChoice"),
          XmlElement("int", typeof(int), Namespace = ""),
          XmlElement("string", typeof(string), Namespace = ""),
@@ -43,10 +25,6 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
 
         [XmlIgnore]
         public virtual MemberValue.ValueType ValueChoice { get; set; }
-
-        //Replaced with section above, as other elements than string may be required. 
-        //[XmlElement("string", Namespace = "")]
-        //public string String { get; set; }
 
         [XmlArray("struct", Namespace = "")]
         [XmlArrayItem("member", Namespace = "")]

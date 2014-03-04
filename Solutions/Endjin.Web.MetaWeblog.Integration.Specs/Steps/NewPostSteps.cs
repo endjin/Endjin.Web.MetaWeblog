@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Endjin.Web.MetaWeblog.Domain.XmlRpc;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -14,18 +15,54 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
     {
 
         [Given(@"I want to be able to add a new blog post to the site, with the title ""(.*)"", the description ""(.*)"", and the categories ""(.*)""")]
-        public void GivenIWantToBeAbleToAddANewBlogPostToTheSiteWithTheTitleTheDescriptionAndTheCategories(string title, string description, string categories)
+        public void GivenIWantToBeAbleToAddANewBlogPostToTheSiteWithTheTitleTheDescriptionAndTheCategories(string title, string description, string csvCategories)
         {
             var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
 
             xmlRpc.Method = "metaWeblog.newPost";
 
+            string[] categories = csvCategories.Split(',');
+
             var param = new RequestParam
             {
                 RequestValue =
                 {
-                    ValueChoice = MemberValue.ValueType.String,
-                    Value = title
+                    Member = new List<Member>
+                                        {
+                                            new Member
+                                            {
+                                                Name = "title",
+                                                Value = new MemberValue
+                                                {
+                                                    ValueChoice = MemberValue.ValueType.String,
+                                                    Value = title 
+                                                }
+                                            },
+                                            new Member
+                                            {
+                                                Name = "description",
+                                                Value = new MemberValue
+                                                {
+                                                    ValueChoice = MemberValue.ValueType.String,
+                                                    Value = description 
+                                                }
+                                            },
+                                            new Member
+                                            {
+                                                Name = "categories",
+                                                Value = new MemberValue
+                                                {
+                                                    ValueChoice = MemberValue.ValueType.Array,
+                                                    Value = new MemberValueArray
+                                                    {
+                                                        Value = categories.Select(category => new MemberValue
+                                                        {
+                                                            ValueChoice = MemberValue.ValueType.String, Value = category
+                                                        }).ToList()
+                                                    }
+                                                }
+                                            }
+                                        }
                 }
             };
 
@@ -33,7 +70,7 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
 
             ScenarioContext.Current.Set(xmlRpc, Keys.XmlRpcRequest);
         }
-        
+
         [Given(@"it should be added as a draft")]
         public void GivenItShouldBeAddedAsADraft()
         {

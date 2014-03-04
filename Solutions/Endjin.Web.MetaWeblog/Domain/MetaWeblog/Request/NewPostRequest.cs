@@ -17,13 +17,13 @@ namespace Endjin.Web.MetaWeblog.Domain.MetaWeblog.Request
         //Shouldn't do this as Post is a response object, not a request object. 
         //public Post Post { get; set; } 
 
-        public string title { get; set; }
+        public string Title { get; set; }
         
-        public string description { get; set; }
+        public string Description { get; set; }
 
-        public string link { get; set; }
+        public string Link { get; set; }
         
-        public string[] categories { get; set; }
+        public string[] Categories { get; set; }
 
         public string Publish { get; set; }
 
