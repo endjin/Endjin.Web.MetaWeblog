@@ -29,38 +29,10 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Request
                 Password = input.Params.ElementAt(2).RequestValue.Value.ToString(),
                 Title = input.Params.ElementAt(4).RequestValue.Member.FirstOrDefault(member => member.Name.ToString() == "title").Value.Value.ToString(),
                 Description = input.Params.ElementAt(4).RequestValue.Member.FirstOrDefault(member => member.Name.ToString() == "description").Value.Value.ToString(),
-                //Categories. Return a list. Iterate over MemberValues 
-                Categories = GetCategoriesFromMemberValueArray((MemberValueArray)input.Params.ElementAt(4).RequestValue.Member.FirstOrDefault(member => member.Name.ToString() == "categories").Value.Value),
+                Categories = ((MemberValueArray)input.Params.ElementAt(4).RequestValue.Member.FirstOrDefault(member => member.Name.ToString() == "categories").Value.Value).Value.Select(memberValue => memberValue.Value.ToString()).ToArray(),
                 Publish = input.Params.ElementAt(5).RequestValue.Value.ToString()
             };
         }
-
-        private String[] GetCategoriesFromMemberValueArray(MemberValueArray input)
-        {
-            List<string> categoriesFromMemberValueArray = new List<string>();
-            
-            foreach (var memberValue in input.Value)
-            {
-                categoriesFromMemberValueArray.Add(memberValue.Value.ToString());
-            }
-            return categoriesFromMemberValueArray.ToArray();
-        }
-        //new Member
-        //                                    {
-        //                                        Name = "categories",
-        //                                        Value = new MemberValue
-        //                                        {
-        //                                            ValueChoice = MemberValue.ValueType.Array,
-        //                                            Value = new MemberValueArray
-        //                                            {
-        //                                                Value = categories.Select(category => new MemberValue
-        //                                                {
-        //                                                    ValueChoice = MemberValue.ValueType.String, Value = category
-        //                                                }).ToList()
-        //                                            }
-        //                                        }
-        //                                    }
-
 
         public object MapFrom(object input)
         {
