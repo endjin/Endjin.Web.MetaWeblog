@@ -10,5 +10,6 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
     {
         [XmlElement("value", Namespace = "")]
         public ResponseData Value { get; set; }
+
     }
 }

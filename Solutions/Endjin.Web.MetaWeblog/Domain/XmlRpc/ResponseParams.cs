@@ -8,12 +8,13 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
 
     public class ResponseParams
     {
-        public ResponseParams()
-        {
-            this.Param = new ResponseParam();
-        }
+        private ResponseParam param;
 
         [XmlElement("param", Namespace = "")]
-        public ResponseParam Param { get; set; }
+        public ResponseParam Param
+        {
+            get { return param ?? (param = new ResponseParam()); }
+            set { param = value; }
+        }
     }
 }

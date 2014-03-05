@@ -1,0 +1,10 @@
+﻿<methodResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <fault xsi:nil="true" />
+  <params>
+    <param />
+    <value>
+      <string>/blogs/blog1</string>
+    </value>
+  </params>
+</methodResponse>

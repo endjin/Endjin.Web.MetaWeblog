@@ -20,9 +20,9 @@
             {
                 response.Params.Add(new ResponseParams
                 {
-                    Param = new ResponseParam
+                    Param = new ResponseParam()
                     {
-                        Value = new ResponseData
+                        Value = new ResponseData()
                         {
                             Data = new List<ResponseDataItem>
                             {
@@ -47,6 +47,7 @@
                             }
                         }
                     }
+
                 });
             }
 

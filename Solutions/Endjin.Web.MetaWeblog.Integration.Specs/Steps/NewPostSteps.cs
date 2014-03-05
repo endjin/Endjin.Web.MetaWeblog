@@ -80,8 +80,8 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
             {
                 RequestValue =
                     {
-                        ValueChoice = MemberValue.ValueType.String,
-                        Value = "false"
+                        ValueChoice = MemberValue.ValueType.@Boolean,
+                        Value = 0
                     }
             };
             xmlRpc.Params.Add(param);
@@ -98,8 +98,8 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
             {
                 RequestValue =
                 {
-                    ValueChoice = MemberValue.ValueType.String,
-                    Value = "true"
+                    ValueChoice = MemberValue.ValueType.@Boolean,
+                    Value = 1
                 }
             };
             xmlRpc.Params.Add(param);

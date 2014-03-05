@@ -18,7 +18,6 @@
             return new NewPostRequest
             {
                 BlogId = input.Params.ElementAt(3).RequestValue.Value.ToString(),
-                AppKey = input.Params.ElementAt(0).RequestValue.Value.ToString(),
                 UserName = input.Params.ElementAt(1).RequestValue.Value.ToString(),
                 Password = input.Params.ElementAt(2).RequestValue.Value.ToString(),
                 Title = input.Params.ElementAt(4).RequestValue.Member.FirstOrDefault(member => member.Name.ToString() == "title").Value.Value.ToString(),

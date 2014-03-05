@@ -24,7 +24,9 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
             [XmlEnum("double")]
             Double,
             [XmlEnum("base64")]
-            Base64
+            Base64,
+            [XmlEnum("boolean")]
+            @Boolean
         }
 
         [XmlChoiceIdentifier("ValueChoice"),
@@ -34,7 +36,8 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
          XmlElement("dateTime.iso8601", typeof(string), Namespace = ""),
          XmlElement("double", typeof(double), Namespace = ""),
          XmlElement("base64", typeof(string), Namespace = ""),
-         XmlElement("array", typeof(MemberValueArray), Namespace = "")]
+         XmlElement("array", typeof(MemberValueArray), Namespace = ""),
+         XmlElement("boolean", typeof(int), Namespace = "")]
         public object Value {get; set;}
 
         [XmlIgnore]

@@ -93,6 +93,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\BloggerDeletePost.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BloggerDeletePost.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\getCategories.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,6 +132,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\BloggerDeletePost.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BloggerDeletePost.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\getCategories.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>getCategories.feature.cs</LastGenOutput>
@@ -156,9 +165,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Messages\Requests\Samples\BloggerDeletePost.xml" />
     <Content Include="Messages\Requests\Samples\GetCategoriesRequest.xml" />
     <Content Include="Messages\Requests\Samples\GetPostRequest.xml" />
     <Content Include="Messages\Requests\Samples\GetUserBlogsRequest.xml" />
+    <Content Include="Messages\Requests\Samples\NewPostRequestMwl.xml" />
     <Content Include="Messages\Requests\TestOutput\NewPostRequest.xml" />
     <Content Include="Messages\Responses\Samples\GetCategoriesResponse.xml" />
     <Content Include="Messages\Responses\Samples\GetPostResponse.xml" />
@@ -169,6 +180,13 @@
     <Content Include="Messages\Requests\Samples\﻿GetRecentPostsRequest.xml" />
     <Content Include="Messages\Responses\Samples\NewPostResponse.xml" />
     <Content Include="Messages\Responses\TestOutput\GetRecentPostsResponse.xml" />
+    <Content Include="Messages\Responses\TestOutput\NewPostResponse.xml" />
+    <Content Include="Messages\Responses\TestOutput\NewPostResponse2.xml" />
+    <Content Include="Messages\Responses\TestOutput\NewPostResponse3.xml" />
+    <Content Include="Messages\Responses\TestOutput\NewPostResponse4.xml" />
+    <Content Include="Messages\Responses\TestOutput\NewPostResponse5.xml" />
+    <Content Include="Messages\Responses\TestOutput\NewPostResponse6.xml" />
+    <Content Include="Messages\Responses\TestOutput\NewPostResponse7.xml" />
     <Content Include="wlrmanifest.xml">
       <SubType>Designer</SubType>
     </Content>

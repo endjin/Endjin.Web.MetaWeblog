@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<methodCall>
+  <methodName>blogger.deletePost</methodName>
+  <params>
+    <param>
+      <value>
+        <string>0123456789ABCDEF</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>postid/blogs/blog1</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>Alice</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>Waddicor</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <boolean>1</boolean>
+      </value>
+    </param>
+  </params>
+</methodCall>

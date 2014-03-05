@@ -5,7 +5,6 @@
 
 Scenario: Add a new blog post to the site as a draft
 #Does this request provide the app key? 
-	Given I have a user with an AppKey of "0123456789ABCDEF"
 	Given the username "Alice" 
 	And a password "Waddicor" 
 	And the blogId is 1
@@ -17,7 +16,6 @@ Scenario: Add a new blog post to the site as a draft
 
 Scenario: Add a new blog post to the site and publish it
 #Does this request provide the app key? 
-	Given I have a user with an AppKey of "0123456789ABCDEF"
 	Given the username "Alice" 
 	And a password "Waddicor" 
 	And the blogId is 1

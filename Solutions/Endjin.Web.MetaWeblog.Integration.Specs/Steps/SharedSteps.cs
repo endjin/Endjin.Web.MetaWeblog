@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -7,6 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading;
+using System.Web.UI.WebControls;
 using System.Xml;
 using System.Xml.Serialization;
 using Endjin.Web.MetaWeblog.Domain.XmlRpc;
@@ -21,9 +23,15 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
         [Given(@"I have a user with an AppKey of ""(.*)""")]
         public void GivenIHaveAUserWithAnAppKeyOf(string appKey)
         {
-            var xmlRpc = new Request { Params = new List<RequestParam>() };
+            Request xmlRpc;
 
-            //var param = new RequestParam { RequestValue = { String = appKey } };
+            if (!ScenarioContext.Current.TryGetValue<Request>(Keys.XmlRpcRequest, out xmlRpc))
+            {
+                xmlRpc = new Request
+                {
+                    Params = new List<RequestParam>()
+                };
+            }
 
             var param = new RequestParam
             {
@@ -42,7 +50,17 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
         [Given(@"a password ""(.*)""")]
         public void GivenAPassword(string password)
         {
-            var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
+            //var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest) ?? new Request { Params = new List<RequestParam>() };
+
+            Request xmlRpc;
+
+            if (!ScenarioContext.Current.TryGetValue<Request>(Keys.XmlRpcRequest, out xmlRpc))
+            {
+                xmlRpc = new Request
+                {
+                    Params = new List<RequestParam>()
+                };
+            }
 
             var param = new RequestParam
             {
@@ -61,7 +79,15 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
         [Given(@"the username ""(.*)""")]
         public void GivenTheUserName(string username)
         {
-            var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
+            Request xmlRpc;
+
+            if (!ScenarioContext.Current.TryGetValue<Request>(Keys.XmlRpcRequest, out xmlRpc))
+            {
+                xmlRpc = new Request
+                {
+                    Params = new List<RequestParam>()
+                };
+            }
 
             var param = new RequestParam
             {
@@ -80,7 +106,15 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
         [Given(@"the blogId is (.*)")]
         public void GivenTheBlogIdIs(int blogId)
         {
-            var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
+            Request xmlRpc;
+
+            if (!ScenarioContext.Current.TryGetValue<Request>(Keys.XmlRpcRequest, out xmlRpc))
+            {
+                xmlRpc = new Request
+                {
+                    Params = new List<RequestParam>()
+                };
+            }
 
             var param = new RequestParam
             {

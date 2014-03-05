@@ -10,15 +10,16 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
     [XmlRoot("methodResponse", Namespace = "")]
     public class Response
     {
-        public Response()
-        {
-            this.Params = new List<ResponseParams>();
-        }
+        private List<ResponseParams> responseParams;
 
         [XmlElement("fault", Namespace = "", IsNullable = true)]
         public Fault Fault { get; set; }
 
         [XmlElement("params", Namespace = "")]
-        public List<ResponseParams> Params { get; set; }
+        public List<ResponseParams> Params
+        {
+            get { return responseParams ?? (Params = new List<ResponseParams>()); }
+            set { responseParams = value; }
+        }
     }
 }

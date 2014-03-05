@@ -5,16 +5,14 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
     using System.Collections.Generic;
     using System.Xml.Serialization;
 
-    #endregion 
+    #endregion
 
     public class ResponseData
     {
-        public ResponseData()
-        {
-            this.Data = new List<ResponseDataItem>();
-        }
+        private List<ResponseDataItem> data;
 
-        [XmlArray("array", Namespace = ""), XmlArrayItem("data", Namespace = "")]
+        [XmlArray("array", Namespace = "")]
+        [XmlArrayItem("data", Namespace = "")]
         public List<ResponseDataItem> Data { get; set; }
     }
 }

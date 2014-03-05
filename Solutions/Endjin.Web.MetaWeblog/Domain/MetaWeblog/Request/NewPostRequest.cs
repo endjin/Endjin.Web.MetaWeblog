@@ -3,9 +3,6 @@
     public class NewPostRequest
     {
         public string BlogId { get; set; }
-        
-        // Not sure if AppKey is necessary here
-        public string AppKey { get; set; }
 
         public string UserName { get; set; }
 
@@ -14,8 +11,6 @@
         public string Title { get; set; }
         
         public string Description { get; set; }
-
-        public string Link { get; set; }
         
         public string[] Categories { get; set; }
 
