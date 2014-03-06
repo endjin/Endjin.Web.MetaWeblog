@@ -4,6 +4,7 @@
 
     using System.Net;
     using System.Net.Http;
+    using System.Net.Http.Formatting;
     using System.Threading.Tasks;
     using System.Web.Http;
 
@@ -14,8 +15,6 @@
 
     #endregion 
 
-    // TODO: Figure out how to test attribute based routes.
-    // [Route("MetaWeblog")]
     [XmlRpcConfig]
     public class MetaWeblogController : ApiController
     {
@@ -43,9 +42,18 @@
 
             var metaWeblogRequest = requestMapper.MapFrom(request);
             var result = await processor.ProcessAsync(metaWeblogRequest);
-            var response = responseMapper.MapFrom(result);
+            dynamic response = responseMapper.MapFrom(result);
 
-            return this.Request.CreateResponse(HttpStatusCode.OK, (Response)response);
+            var message = new HttpResponseMessage(HttpStatusCode.OK);
+
+            switch (request.Method)
+            {
+                case "blogger.getUsersBlogs":
+                    message.Content = new ObjectContent(typeof(Response), response, new XmlMediaTypeFormatter());
+                    break;
+            }
+
+            return message;
         }
     }
 }
