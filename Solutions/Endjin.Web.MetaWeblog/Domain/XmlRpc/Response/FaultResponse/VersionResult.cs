@@ -1,8 +1,10 @@
-namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
+namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.FaultResponse
 {
+    using System.Xml.Serialization;
+
     #region Using Directives
 
-    using System.Xml.Serialization;
+    
 
     #endregion 
 

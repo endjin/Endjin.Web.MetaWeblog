@@ -1,4 +1,4 @@
-﻿namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
+﻿namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.FaultResponse
 {
     #region Using Directives
 
@@ -8,7 +8,7 @@
 
     public class Fault
     {
-        [XmlElement("value", Namespace = "", IsNullable = true)]
+        [XmlElement("value", Namespace = "", IsNullable = false)]
         public FaultValue Value { get; set; }
     }
 }

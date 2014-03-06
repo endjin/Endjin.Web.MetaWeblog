@@ -6,7 +6,7 @@
 
     using Endjin.Web.MetaWeblog.Contracts.Mappers;
     using Endjin.Web.MetaWeblog.Domain.MetaWeblog.Response;
-    using Endjin.Web.MetaWeblog.Domain.XmlRpc;
+    using Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse;
 
     #endregion 
 
@@ -20,9 +20,9 @@
             {
                 response.Params.Add(new ResponseParams
                 {
-                    Param = new ResponseParam()
+                    Param = new ResponseParam
                     {
-                        Value = new ResponseData()
+                        Value = new ResponseData
                         {
                             Data = new List<ResponseDataItem>
                             {
@@ -47,7 +47,6 @@
                             }
                         }
                     }
-
                 });
             }
 

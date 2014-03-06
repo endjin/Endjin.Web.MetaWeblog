@@ -10,9 +10,9 @@
 
     #endregion
 
-    public class XmlRpcRequestToGetRecentPostsRequestMapper : IMapper<Request, GetRecentPostsRequest>
+    public class XmlRpcRequestToGetRecentPostsRequestMapper : IMapper<RequestTop, GetRecentPostsRequest>
     {
-        public GetRecentPostsRequest MapFrom(Request input)
+        public GetRecentPostsRequest MapFrom(RequestTop input)
         {
             return new GetRecentPostsRequest
             {
@@ -25,7 +25,7 @@
 
         public object MapFrom(object input)
         {
-            return this.MapFrom((Request)input);
+            return this.MapFrom((RequestTop)input);
         }
     }
 }

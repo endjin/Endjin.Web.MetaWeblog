@@ -7,7 +7,7 @@
     using System.Net.Http.Formatting;
 
     using Endjin.Web.MetaWeblog.Contracts.Mappers;
-    using Endjin.Web.MetaWeblog.Domain.XmlRpc;
+    using Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse;
 
     #endregion 
 

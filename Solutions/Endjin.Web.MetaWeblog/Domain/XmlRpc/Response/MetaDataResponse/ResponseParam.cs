@@ -1,4 +1,4 @@
-namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
+namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse
 {
     #region Using Directives
 
@@ -10,6 +10,5 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
     {
         [XmlElement("value", Namespace = "")]
         public ResponseData Value { get; set; }
-
     }
 }

@@ -1,8 +1,10 @@
-namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
+namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse
 {
+    using System.Xml.Serialization;
+
     #region Using Directives
 
-    using System.Xml.Serialization;
+    
 
     #endregion 
 

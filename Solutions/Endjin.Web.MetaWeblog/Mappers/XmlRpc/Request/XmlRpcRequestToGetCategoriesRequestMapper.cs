@@ -10,9 +10,9 @@
 
     #endregion
 
-    public class XmlRpcRequestToGetCategoriesRequestMapper : IMapper<Request, GetCategoriesRequest>
+    public class XmlRpcRequestToGetCategoriesRequestMapper : IMapper<RequestTop, GetCategoriesRequest>
     {
-        public GetCategoriesRequest MapFrom(Request input)
+        public GetCategoriesRequest MapFrom(RequestTop input)
         {
             return new GetCategoriesRequest
             {
@@ -24,7 +24,7 @@
 
         public object MapFrom(object input)
         {
-            return this.MapFrom((Request)input);
+            return this.MapFrom((RequestTop)input);
         }
     }
 }

@@ -5,10 +5,12 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
     using System.Collections.Generic;
     using System.Xml.Serialization;
 
+    using Endjin.Web.MetaWeblog.Domain.XmlRpc.Request;
+
     #endregion 
 
     [XmlRoot("methodCall", Namespace = "")]
-    public class Request
+    public class RequestTop
     {
         [XmlElement("methodName", Namespace = "")]
         public string Method { get; set; }

@@ -10,9 +10,9 @@
 
     #endregion 
 
-    public class XmlRpcRequestToGetUserBlogsRequestMapper : IMapper<Request, GetUserBlogsRequest>
+    public class XmlRpcRequestToGetUserBlogsRequestMapper : IMapper<RequestTop, GetUserBlogsRequest>
     {
-        public GetUserBlogsRequest MapFrom(Request input)
+        public GetUserBlogsRequest MapFrom(RequestTop input)
         {
             return new GetUserBlogsRequest
             {
@@ -24,7 +24,7 @@
 
         public object MapFrom(object input)
         {
-            return this.MapFrom((Request)input);
+            return this.MapFrom((RequestTop)input);
         }
     }
 }

@@ -8,7 +8,7 @@
     using Endjin.Web.MetaWeblog.Mappers;
     using Endjin.Web.MetaWeblog.Mappers.XmlRpc.Request;
 
-    #endregion 
+    #endregion
 
     public class RequestMapperFactoryInstaller : IInstaller
     {

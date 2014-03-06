@@ -1,4 +1,4 @@
-namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
+namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse
 {
     #region Using Directives
 
@@ -13,8 +13,8 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
         [XmlElement("param", Namespace = "")]
         public ResponseParam Param
         {
-            get { return param ?? (param = new ResponseParam()); }
-            set { param = value; }
+            get { return this.param ?? (this.param = new ResponseParam()); }
+            set { this.param = value; }
         }
     }
 }

@@ -1,25 +1,25 @@
-namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
+namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse
 {
     #region Using Directives
 
     using System.Collections.Generic;
     using System.Xml.Serialization;
 
+    using Endjin.Web.MetaWeblog.Contracts.Domain;
+
     #endregion 
 
     [XmlRoot("methodResponse", Namespace = "")]
-    public class Response
+    public class Response : IResponse
     {
         private List<ResponseParams> responseParams;
-
-        [XmlElement("fault", Namespace = "", IsNullable = true)]
-        public Fault Fault { get; set; }
 
         [XmlElement("params", Namespace = "")]
         public List<ResponseParams> Params
         {
-            get { return responseParams ?? (Params = new List<ResponseParams>()); }
-            set { responseParams = value; }
+            get { return this.responseParams ?? (this.Params = new List<ResponseParams>()); }
+            set { this.responseParams = value; }
         }
     }
+
 }

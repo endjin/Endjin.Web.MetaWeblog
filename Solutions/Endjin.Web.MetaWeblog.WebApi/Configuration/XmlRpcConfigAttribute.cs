@@ -18,10 +18,13 @@
         {
             controllerSettings.Formatters.Clear();
 
-            var xmlFormatter = new XmlMediaTypeFormatter();
-            xmlFormatter.UseXmlSerializer = true;
-            xmlFormatter.SetSerializer<Request>(new XmlSerializer(typeof(Request)));
-            xmlFormatter.SetSerializer<Response>(new XmlSerializer(typeof(Response)));
+            var xmlFormatter = new XmlMediaTypeFormatter { UseXmlSerializer = true };
+            xmlFormatter.SetSerializer<RequestTop>(new XmlSerializer(typeof(RequestTop)));
+
+            xmlFormatter.SetSerializer<Domain.XmlRpc.Response.FaultResponse.Response>(new XmlSerializer(typeof(Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.FaultResponse.Response)));
+            xmlFormatter.SetSerializer<Domain.XmlRpc.Response.ConfirmationResponse.Response>(new XmlSerializer(typeof(Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.ConfirmationResponse.Response)));
+            xmlFormatter.SetSerializer<Domain.XmlRpc.Response.MetaDataResponse.Response>(new XmlSerializer(typeof(Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse.Response)));
+            xmlFormatter.SetSerializer<Domain.XmlRpc.Response.PostContentResponse.Response>(new XmlSerializer(typeof(Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse.Response)));
 
             controllerSettings.Formatters.Add(xmlFormatter);
         }

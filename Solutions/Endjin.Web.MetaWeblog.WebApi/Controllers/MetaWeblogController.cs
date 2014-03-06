@@ -35,7 +35,7 @@
             this.processorFactory = processorFactory;
         }
         
-        public async Task<HttpResponseMessage> PostAsync(Request request)
+        public async Task<HttpResponseMessage> PostAsync(RequestTop request)
         {
             if (request == null)
             {

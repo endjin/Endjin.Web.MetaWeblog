@@ -1,15 +1,36 @@
-namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
+namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse
 {
-    #region Using Directives
-
     using System;
-    using System.Collections.Generic;
     using System.Xml.Serialization;
 
-    #endregion 
+    #region Using Directives
 
-    public class RequestValue
+    
+
+    #endregion
+
+    public class MemberValue
     {
+        public enum ValueType
+        {
+            [XmlEnum("array")]
+            Array,
+            [XmlEnum("string")]
+            String,
+            [XmlEnum("int")]
+            Int,
+            [XmlEnum("datetime")]
+            DateTime,
+            [XmlEnum("dateTime.iso8601")]
+            Iso8601,
+            [XmlEnum("double")]
+            Double,
+            [XmlEnum("base64")]
+            Base64,
+            [XmlEnum("boolean")]
+            @Boolean
+        }
+
         [XmlChoiceIdentifier("ValueChoice"),
          XmlElement("int", typeof(int), Namespace = ""),
          XmlElement("string", typeof(string), Namespace = ""),
@@ -22,10 +43,6 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
         public object Value {get; set;}
 
         [XmlIgnore]
-        public virtual MemberValue.ValueType ValueChoice { get; set; }
-
-        [XmlArray("struct", Namespace = "")]
-        [XmlArrayItem("member", Namespace = "")]
-        public List<Member> Member { get; set; }
+        public virtual ValueType ValueChoice { get; set; }
     }
 }

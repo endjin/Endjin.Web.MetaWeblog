@@ -1,5 +1,5 @@
-namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
-{
+namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse
+{    
     #region Using Directives
 
     using System;

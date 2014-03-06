@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using Endjin.Web.MetaWeblog.Domain.XmlRpc;
-using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Assist;
-
-using System.Linq;
-using NUnit.Framework;
-
-
-namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
+﻿namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
 {
+    #region using directives
+
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Endjin.Web.MetaWeblog.Domain.XmlRpc;
+    using Endjin.Web.MetaWeblog.Domain.XmlRpc.Request;
+
+    using TechTalk.SpecFlow;
+
+    #endregion
+
     [Binding]
     public class NewPostSteps
     {
@@ -17,7 +19,7 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
         [Given(@"I want to be able to add a new blog post to the site, with the title ""(.*)"", the description ""(.*)"", and the categories ""(.*)""")]
         public void GivenIWantToBeAbleToAddANewBlogPostToTheSiteWithTheTitleTheDescriptionAndTheCategories(string title, string description, string csvCategories)
         {
-            var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
+            var xmlRpc = ScenarioContext.Current.Get<RequestTop>(Keys.XmlRpcRequest);
 
             xmlRpc.Method = "metaWeblog.newPost";
 
@@ -74,7 +76,7 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
         [Given(@"it should be added as a draft")]
         public void GivenItShouldBeAddedAsADraft()
         {
-            var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
+            var xmlRpc = ScenarioContext.Current.Get<RequestTop>(Keys.XmlRpcRequest);
 
             var param = new RequestParam
             {
@@ -92,7 +94,7 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Steps
         [Given(@"it should be published")]
         public void GivenItShouldBePublished()
         {
-            var xmlRpc = ScenarioContext.Current.Get<Request>(Keys.XmlRpcRequest);
+            var xmlRpc = ScenarioContext.Current.Get<RequestTop>(Keys.XmlRpcRequest);
 
             var param = new RequestParam
             {

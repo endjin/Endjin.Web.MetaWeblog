@@ -1,15 +1,15 @@
-﻿namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
+namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.ConfirmationResponse
 {
     #region Using Directives
 
     using System.Collections.Generic;
     using System.Xml.Serialization;
 
-    #endregion
+    #endregion 
 
-    public class RequestParamValue
+    public class ResponseParamValue
     {
-        public RequestParamValue()
+        public ResponseParamValue()
         {
             this.Member = new List<Member>();
         }

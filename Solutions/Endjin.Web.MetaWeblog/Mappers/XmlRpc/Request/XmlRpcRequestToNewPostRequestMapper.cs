@@ -8,12 +8,13 @@
     using Endjin.Web.MetaWeblog.Contracts.Mappers;
     using Endjin.Web.MetaWeblog.Domain.MetaWeblog.Request;
     using Endjin.Web.MetaWeblog.Domain.XmlRpc;
+    using Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.ConfirmationResponse;
 
     #endregion
 
-    public class XmlRpcRequestToNewPostRequestMapper : IMapper<Request, NewPostRequest> 
+    public class XmlRpcRequestToNewPostRequestMapper : IMapper<RequestTop, NewPostRequest> 
     {
-        public NewPostRequest MapFrom(Request input)
+        public NewPostRequest MapFrom(RequestTop input)
         {
             return new NewPostRequest
             {
@@ -29,7 +30,7 @@
 
         public object MapFrom(object input)
         {
-            return this.MapFrom((Request)input);
+            return this.MapFrom((RequestTop)input);
         }
     }
 }

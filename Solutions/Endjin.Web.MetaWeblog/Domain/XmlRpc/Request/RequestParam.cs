@@ -1,4 +1,4 @@
-namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
+namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Request
 {
     #region Using Directives
 
@@ -15,5 +15,8 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
 
         [XmlElement("value", Namespace = "")]
         public RequestValue RequestValue { get; set; }
+
+        //[XmlElement("value", Namespace = "")]
+        //public MemberValue MemberValue { get; set; }
     }
 }

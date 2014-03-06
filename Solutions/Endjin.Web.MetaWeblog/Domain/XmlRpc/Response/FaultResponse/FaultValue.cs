@@ -1,4 +1,4 @@
-namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
+namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.FaultResponse
 {
     #region Using Directives
 
