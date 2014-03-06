@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using Endjin.Web.MetaWeblog.Domain.XmlRpc;
-
 namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
 {
     #region Using Directives
 
-    
+    using System;
+    using System.Collections.Generic;
+    using System.Xml.Serialization;
 
     #endregion 
 
@@ -31,5 +28,3 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
         public List<Member> Member { get; set; }
     }
 }
-
-        

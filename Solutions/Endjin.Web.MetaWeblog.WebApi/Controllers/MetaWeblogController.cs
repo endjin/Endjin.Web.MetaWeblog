@@ -4,7 +4,6 @@
 
     using System.Net;
     using System.Net.Http;
-    using System.Net.Http.Formatting;
     using System.Threading.Tasks;
     using System.Web.Http;
 
@@ -24,7 +23,11 @@
         private readonly IHttpResponseMessageMapperFactory httpResponseMessageMapperFactory;
         private readonly IProcessorFactory processorFactory;
 
-        public MetaWeblogController(IRequestMapperFactory requestMapperFactory, IResponseMapperFactory responseMapperFactory, IHttpResponseMessageMapperFactory httpResponseMessageMapperFactory, IProcessorFactory processorFactory)
+        public MetaWeblogController(
+            IRequestMapperFactory requestMapperFactory, 
+            IResponseMapperFactory responseMapperFactory, 
+            IHttpResponseMessageMapperFactory httpResponseMessageMapperFactory, 
+            IProcessorFactory processorFactory)
         {
             this.requestMapperFactory = requestMapperFactory;
             this.responseMapperFactory = responseMapperFactory;
@@ -48,9 +51,7 @@
             var result = await processor.ProcessAsync(metaWeblogRequest);
             var response = responseMapper.MapFrom(result);
 
-            var httpResponse = (HttpResponseMessage)httpResponseMapper.MapFrom(response);
-
-            return httpResponse;
+            return (HttpResponseMessage)httpResponseMapper.MapFrom(response);
         }
     }
 }

@@ -4,6 +4,7 @@
 
     using Endjin.Core.Container;
     using Endjin.Web.MetaWeblog.Contracts.Processors;
+    using Endjin.Web.MetaWeblog.Domain.MetaWeblog;
     using Endjin.Web.MetaWeblog.Processors;
 
     #endregion
@@ -21,11 +22,10 @@
 
         private void RegisterDefaultContent(IProcessorFactory processorFactory)
         {
-            processorFactory.RegisterContentFor<GetUserBlogsProcessor>("blogger.getUsersBlogs");
-            processorFactory.RegisterContentFor<GetCategoriesProcessor>("metaWeblog.getCategories");
-            processorFactory.RegisterContentFor<GetRecentPostsProcessor>("metaWeblog.getRecentPosts");
-            processorFactory.RegisterContentFor<NewPostProcessor>("metaWeblog.newPost");
+            processorFactory.RegisterContentFor<GetUserBlogsProcessor>(MetaWeblogActions.GetUsersBlogs);
+            processorFactory.RegisterContentFor<GetCategoriesProcessor>(MetaWeblogActions.GetCategories);
+            processorFactory.RegisterContentFor<GetRecentPostsProcessor>(MetaWeblogActions.GetRecentPosts);
+            processorFactory.RegisterContentFor<NewPostProcessor>(MetaWeblogActions.NewPost);
         }
-
     }
 }

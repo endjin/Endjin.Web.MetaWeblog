@@ -1,6 +1,6 @@
 ﻿namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
 {
-    #region using directives
+    #region Using Directives
 
     using System.Collections.Generic;
 
@@ -8,7 +8,7 @@
     using Endjin.Web.MetaWeblog.Domain.MetaWeblog.Response;
     using Endjin.Web.MetaWeblog.Domain.XmlRpc;
 
-    #endregion
+    #endregion 
 
     public class PostIdToXmlRpcResponseMapper : IMapper<List<PostId>, Response>
     {
@@ -16,7 +16,7 @@
         {
             var response = new Response();
 
-            foreach (var PostId in input)
+            foreach (var postId in input)
             {
                 response.Params.Add(new ResponseParams
                 {
@@ -38,7 +38,7 @@
                                                 Value = new MemberValue
                                                 {
                                                     ValueChoice = MemberValue.ValueType.String,
-                                                    Value = PostId.Id
+                                                    Value = postId.Id
                                                 }
                                             },
                                         }
@@ -49,6 +49,7 @@
                     }
                 });
             }
+
             return response;
         }
 
@@ -58,5 +59,3 @@
         }
     }
 }
-
-

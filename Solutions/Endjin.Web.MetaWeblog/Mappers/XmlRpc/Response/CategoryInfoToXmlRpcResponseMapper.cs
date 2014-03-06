@@ -1,10 +1,9 @@
-﻿using System.Globalization;
-
-namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
+﻿namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
 {
     #region Using Directives
 
     using System.Collections.Generic;
+    using System.Globalization;
 
     using Endjin.Web.MetaWeblog.Contracts.Mappers;
     using Endjin.Web.MetaWeblog.Domain.MetaWeblog.Response;

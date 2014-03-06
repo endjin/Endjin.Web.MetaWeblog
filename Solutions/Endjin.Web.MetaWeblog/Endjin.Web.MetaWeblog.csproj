@@ -62,6 +62,7 @@
     <Compile Include="Contracts\Mappers\IResponseMapperFactory.cs" />
     <Compile Include="Contracts\Processors\IProcessor.cs" />
     <Compile Include="Contracts\Processors\IProcessorFactory.cs" />
+    <Compile Include="Domain\MetaWeblog\MetaWeblogActions.cs" />
     <Compile Include="Domain\MetaWeblog\Request\GetCategoriesRequest.cs" />
     <Compile Include="Domain\MetaWeblog\Request\GetUserBlogsRequest.cs" />
     <Compile Include="Domain\MetaWeblog\Request\NewPostRequest.cs" />

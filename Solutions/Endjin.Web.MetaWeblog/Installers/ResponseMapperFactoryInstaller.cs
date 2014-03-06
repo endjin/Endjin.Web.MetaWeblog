@@ -4,6 +4,7 @@
 
     using Endjin.Core.Container;
     using Endjin.Web.MetaWeblog.Contracts.Mappers;
+    using Endjin.Web.MetaWeblog.Domain.MetaWeblog;
     using Endjin.Web.MetaWeblog.Mappers;
     using Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response;
 
@@ -22,10 +23,10 @@
 
         private void RegisterDefaultContent(IResponseMapperFactory responseMapperFactory)
         {
-            responseMapperFactory.RegisterContentFor<BlogInfoToXmlRpcResponseMapper>("blogger.getUsersBlogs");
-            responseMapperFactory.RegisterContentFor<CategoryInfoToXmlRpcResponseMapper>("metaWeblog.getCategories");
-            responseMapperFactory.RegisterContentFor<PostToXmlRpcResponseMapper>("metaWeblog.getRecentPosts");
-            responseMapperFactory.RegisterContentFor<PostIdToXmlRpcResponseMapper>("metaWeblog.newPost");
+            responseMapperFactory.RegisterContentFor<BlogInfoToXmlRpcResponseMapper>(MetaWeblogActions.GetUsersBlogs);
+            responseMapperFactory.RegisterContentFor<CategoryInfoToXmlRpcResponseMapper>(MetaWeblogActions.GetCategories);
+            responseMapperFactory.RegisterContentFor<PostToXmlRpcResponseMapper>(MetaWeblogActions.GetRecentPosts);
+            responseMapperFactory.RegisterContentFor<PostIdToXmlRpcResponseMapper>(MetaWeblogActions.NewPost);
         }
     }
 }

@@ -1,20 +1,16 @@
-﻿using System.Collections;
-using System.Globalization;
-using System.Linq;
-using System.Net;
-using System.Runtime.InteropServices.ComTypes;
-
-namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
+﻿namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Response
 {
     #region Using Directives
 
     using System.Collections.Generic;
+    using System.Linq;
 
     using Endjin.Web.MetaWeblog.Contracts.Mappers;
     using Endjin.Web.MetaWeblog.Domain.MetaWeblog.Response;
     using Endjin.Web.MetaWeblog.Domain.XmlRpc;
 
     #endregion
+
     public class PostToXmlRpcResponseMapper : IMapper<List<Post>, Response>
     {
         public Response MapFrom(List<Post> input)

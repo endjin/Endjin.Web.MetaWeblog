@@ -28,7 +28,7 @@
                     title = "First Post",
                     description = PCLWebUtility.WebUtility.HtmlEncode("<p>back to a simple description including a <a href=\"http://www.thing.com/\">link</a></p>").Replace("\"", "&quot;"),
                     link = "blogs/firstblog",
-                    categories = new string[]{"Cloud", "Apprenticeships"},
+                    categories = new[] { "Cloud", "Apprenticeships" },
                     publish = false
                 }
             });

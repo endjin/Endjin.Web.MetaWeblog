@@ -3,6 +3,7 @@
     #region Using Directives
 
     using Endjin.Core.Container;
+    using Endjin.Web.MetaWeblog.Domain.MetaWeblog;
     using Endjin.Web.MetaWeblog.WebApi.Contracts.Mappers;
     using Endjin.Web.MetaWeblog.WebApi.Mappers.Http;
 
@@ -21,7 +22,7 @@
 
         private void RegisterDefaultContent(IHttpResponseMessageMapperFactory responseMapperFactory)
         {
-            responseMapperFactory.RegisterContentFor<XmlRpcResponseToHttpResponseMessagetMapper>("blogger.getUsersBlogs");
+            responseMapperFactory.RegisterContentFor<XmlRpcResponseToHttpResponseMessagetMapper>(MetaWeblogActions.GetUsersBlogs);
         }
     }
 }

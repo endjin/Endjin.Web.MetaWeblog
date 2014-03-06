@@ -1,22 +1,16 @@
-﻿using System.Collections;
-using System.Globalization;
-using Endjin.Web.MetaWeblog.Domain.XmlRpc;
-
-namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Request
+﻿namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Request
 {
-    #region using directives
+    #region Using Directives
 
-    using System;
-    using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     using Endjin.Web.MetaWeblog.Contracts.Mappers;
     using Endjin.Web.MetaWeblog.Domain.MetaWeblog.Request;
     using Endjin.Web.MetaWeblog.Domain.XmlRpc;
 
     #endregion
+
     public class XmlRpcRequestToNewPostRequestMapper : IMapper<Request, NewPostRequest> 
     {
         public NewPostRequest MapFrom(Request input)
@@ -29,7 +23,7 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Request
                 Password = input.Params.ElementAt(2).RequestValue.Value.ToString(),
                 Title = input.Params.ElementAt(4).RequestValue.Member.FirstOrDefault(member => member.Name.ToString() == "title").Value.Value.ToString(),
                 Description = input.Params.ElementAt(4).RequestValue.Member.FirstOrDefault(member => member.Name.ToString() == "description").Value.Value.ToString(),
-                Categories = ((MemberValueArray)input.Params.ElementAt(4).RequestValue.Member.FirstOrDefault(member => member.Name.ToString() == "categories").Value.Value).Value.Select(memberValue => memberValue.Value.ToString()).ToArray(),
+                Categories = ((MemberValueArray)input.Params.ElementAt(4).RequestValue.Member.FirstOrDefault(member => member.Name.ToString(CultureInfo.InvariantCulture) == "categories").Value.Value).Value.Select(memberValue => memberValue.Value.ToString()).ToArray(),
                 Publish = input.Params.ElementAt(5).RequestValue.Value.ToString()
             };
         }
@@ -40,4 +34,3 @@ namespace Endjin.Web.MetaWeblog.Mappers.XmlRpc.Request
         }
     }
 }
-                 

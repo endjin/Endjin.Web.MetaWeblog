@@ -5,7 +5,6 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    using Endjin.Web.MetaWeblog.Contracts.Mappers;
     using Endjin.Web.MetaWeblog.Contracts.Processors;
     using Endjin.Web.MetaWeblog.Domain.MetaWeblog.Request;
     using Endjin.Web.MetaWeblog.Domain.MetaWeblog.Response;
