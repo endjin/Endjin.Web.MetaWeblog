@@ -12,6 +12,7 @@
     using Endjin.Web.MetaWeblog.Contracts.Processors;
     using Endjin.Web.MetaWeblog.Domain.XmlRpc;
     using Endjin.Web.MetaWeblog.WebApi.Configuration;
+    using Endjin.Web.MetaWeblog.WebApi.Contracts.Mappers;
 
     #endregion 
 
@@ -20,12 +21,14 @@
     {
         private readonly IRequestMapperFactory requestMapperFactory;
         private readonly IResponseMapperFactory responseMapperFactory;
+        private readonly IHttpResponseMessageMapperFactory httpResponseMessageMapperFactory;
         private readonly IProcessorFactory processorFactory;
 
-        public MetaWeblogController(IRequestMapperFactory requestMapperFactory, IResponseMapperFactory responseMapperFactory, IProcessorFactory processorFactory)
+        public MetaWeblogController(IRequestMapperFactory requestMapperFactory, IResponseMapperFactory responseMapperFactory, IHttpResponseMessageMapperFactory httpResponseMessageMapperFactory, IProcessorFactory processorFactory)
         {
             this.requestMapperFactory = requestMapperFactory;
             this.responseMapperFactory = responseMapperFactory;
+            this.httpResponseMessageMapperFactory = httpResponseMessageMapperFactory;
             this.processorFactory = processorFactory;
         }
         
@@ -38,22 +41,16 @@
 
             var requestMapper = this.requestMapperFactory.GetContentFor(request.Method);
             var responseMapper = this.responseMapperFactory.GetContentFor(request.Method);
+            var httpResponseMapper = this.httpResponseMessageMapperFactory.GetContentFor(request.Method);
             var processor = this.processorFactory.GetContentFor(request.Method);
 
             var metaWeblogRequest = requestMapper.MapFrom(request);
             var result = await processor.ProcessAsync(metaWeblogRequest);
-            dynamic response = responseMapper.MapFrom(result);
+            var response = responseMapper.MapFrom(result);
 
-            var message = new HttpResponseMessage(HttpStatusCode.OK);
+            var httpResponse = (HttpResponseMessage)httpResponseMapper.MapFrom(response);
 
-            switch (request.Method)
-            {
-                case "blogger.getUsersBlogs":
-                    message.Content = new ObjectContent(typeof(Response), response, new XmlMediaTypeFormatter());
-                    break;
-            }
-
-            return message;
+            return httpResponse;
         }
     }
 }

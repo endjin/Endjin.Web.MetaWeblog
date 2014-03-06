@@ -107,11 +107,15 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Configuration\XmlRpcConfigAttribute.cs" />
+    <Compile Include="Contracts\Mappers\IHttpResponseMessageMapperFactory.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MetaWeblogController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Installers\ResponseMapperFactoryInstaller.cs" />
+    <Compile Include="Mappers\Http\XmlRpcResponseToHttpResponseMessagetMapper.cs" />
+    <Compile Include="Mappers\Http\HttpResponseMessageMapperFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +149,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>7169</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://awaddicor:7169</IISUrl>
+          <IISUrl>http://localhost:7169</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
