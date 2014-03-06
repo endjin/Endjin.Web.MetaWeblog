@@ -1,0 +1,63 @@
+﻿<methodCall>
+  <methodName>metaWeblog.newPost</methodName>
+  <params>
+    <param>
+      <value>
+        <string>0123456789ABCDEF</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>Alice</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>Waddicor</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>1</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <struct>
+          <member>
+            <name>title</name>
+            <value>
+              <string>Blog 1</string>
+            </value>
+          </member>
+          <member>
+            <name>description</name>
+            <value>
+              <string>Here's the content</string>
+            </value>
+          </member>
+          <member>
+            <name>categories</name>
+            <value>
+              <array>
+                <data>
+                  <value>
+                    <string>cloud</string>
+                  </value>
+                  <value>
+                    <string> apprenticeships</string>
+                  </value>
+                </data>
+              </array>
+            </value>
+          </member>
+        </struct>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>true</string>
+      </value>
+    </param>
+  </params>
+</methodCall>

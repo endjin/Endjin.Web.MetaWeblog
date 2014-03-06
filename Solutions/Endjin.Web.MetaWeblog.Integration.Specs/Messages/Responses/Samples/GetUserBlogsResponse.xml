@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <methodResponse>
   <params>
     <param>
@@ -9,21 +9,15 @@
               <struct>
                 <member>
                   <name>url</name>
-                  <value>
-                    <string>http://localhost:7169/</string>
-                  </value>
+                  <value>http://atompubtest.azurewebsites.net/</value>
                 </member>
                 <member>
                   <name>blogid</name>
-                  <value>
-                    <string>1</string>
-                  </value>
+                  <value>1000</value>
                 </member>
                 <member>
                   <name>blogName</name>
-                  <value>
-                    <string>endjin blog</string>
-                  </value>
+                  <value>AtomPub test blog</value>
                 </member>
               </struct>
             </value>

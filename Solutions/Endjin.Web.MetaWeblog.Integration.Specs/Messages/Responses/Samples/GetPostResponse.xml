@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<methodResponse>
+  <params>
+    <param>
+      <value>
+        <struct>
+          <member>
+            <name>postid</name>
+            <value>
+              <string>52010c70-92c4-4ba9-8b1e-99a6f031c94f</string>
+            </value>
+          </member>
+          <member>
+            <name>title</name>
+            <value>
+              <string>A new post</string>
+            </value>
+          </member>
+          <member>
+            <name>description</name>
+            <value>
+              <string>&lt;p&gt;Content here&lt;/p&gt;</string>
+            </value>
+          </member>
+          <member>
+            <name>link</name>
+            <value>
+              <string>http://atompubtest.azurewebsites.net/post/A-new-post</string>
+            </value>
+          </member>
+          <member>
+            <name>wp_slug</name>
+            <value>
+              <string>A-new-post</string>
+            </value>
+          </member>
+          <member>
+            <name>mt_excerpt</name>
+            <value>
+              <string />
+            </value>
+          </member>
+          <member>
+            <name>mt_allow_comments</name>
+            <value>
+              <int>1</int>
+            </value>
+          </member>
+          <member>
+            <name>dateCreated</name>
+            <value>
+              <dateTime.iso8601>20140303T18:38:06</dateTime.iso8601>
+            </value>
+          </member>
+          <member>
+            <name>publish</name>
+            <value>
+              <boolean>0</boolean>
+            </value>
+          </member>
+          <member>
+            <name>mt_keywords</name>
+            <value>
+              <string />
+            </value>
+          </member>
+          <member>
+            <name>categories</name>
+            <value>
+              <array>
+                <data>
+                  <value>
+                    <string>Cloud</string>
+                  </value>
+                </data>
+              </array>
+            </value>
+          </member>
+        </struct>
+      </value>
+    </param>
+  </params>
+</methodResponse>

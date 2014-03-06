@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<methodCall>
+  <methodName>metaWeblog.newPost</methodName>
+  <params>
+    <param>
+      <value>
+        <string>http://atompubtest.azurewebsites.net/</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>admin</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>endj1n</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <struct>
+          <member>
+            <name>title</name>
+            <value>
+              <string>A new post</string>
+            </value>
+          </member>
+          <member>
+            <name>description</name>
+            <value>
+              <string>&lt;p&gt;Content here&lt;/p&gt;</string>
+            </value>
+          </member>
+          <member>
+            <name>mt_keywords</name>
+            <value>
+              <string />
+            </value>
+          </member>
+          <member>
+            <name>wp_slug</name>
+            <value>
+              <string />
+            </value>
+          </member>
+          <member>
+            <name>mt_basename</name>
+            <value>
+              <string />
+            </value>
+          </member>
+          <member>
+            <name>categories</name>
+            <value>
+              <array>
+                <data>
+                  <value>
+                    <string>Cloud</string>
+                  </value>
+                </data>
+              </array>
+            </value>
+          </member>
+          <member>
+            <name>mt_excerpt</name>
+            <value>
+              <string />
+            </value>
+          </member>
+        </struct>
+      </value>
+    </param>
+    <param>
+      <value>
+        <boolean>0</boolean>
+      </value>
+    </param>
+  </params>
+</methodCall>

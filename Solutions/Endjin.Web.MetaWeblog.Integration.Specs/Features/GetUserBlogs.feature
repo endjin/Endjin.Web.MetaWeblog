@@ -9,4 +9,4 @@ Scenario: Request valid account details
 	And a password "Waddicor" 
 	And I want to validate that the current user has a valid account with the MetaWeblog service
 	When I send the details to the MetaWeblog endpoint
-	Then I should recieve a valid response
+	Then I should receive a valid response

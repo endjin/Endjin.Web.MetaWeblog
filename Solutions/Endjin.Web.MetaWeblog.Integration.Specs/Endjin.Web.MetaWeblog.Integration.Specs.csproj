@@ -98,11 +98,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getCategories.feature</DependentUpon>
     </Compile>
-    <Compile Include="HttpRequestMethods.cs" />
-    <Compile Include="Features\GetUserBlogs.feature.cs">
+    <Compile Include="Features\getRecentPosts.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GetUserBlogs.feature</DependentUpon>
+      <DependentUpon>getRecentPosts.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\newPost.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>newPost.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\GetRecentPostsSteps.cs" />
+    <Compile Include="HttpRequestMethods.cs" />
+    <Compile Include="Features\getUserBlogs1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>getUserBlogs.feature</DependentUpon>
     </Compile>
     <Compile Include="Hooks\ContainerHooks.cs" />
     <Compile Include="Hooks\SetupHooks.cs" />
@@ -111,6 +122,7 @@
     <Compile Include="Steps\GetCategoriesSteps.cs" />
     <Compile Include="Steps\GetUserBlogsSteps.cs" />
     <Compile Include="Steps\Keys.cs" />
+    <Compile Include="Steps\NewPostSteps.cs" />
     <Compile Include="Steps\SharedSteps.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -119,9 +131,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>getCategories.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\GetUserBlogs.feature">
+    <None Include="Features\getRecentPosts.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GetUserBlogs.feature.cs</LastGenOutput>
+      <LastGenOutput>getRecentPosts.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\getUserBlogs.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>getUserBlogs1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\newPost.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>newPost.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -136,9 +156,24 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Messages\GetCategoriesResponse.xml" />
-    <Content Include="Messages\GetUserBlogsResponse.xml" />
+    <Content Include="Messages\Requests\Samples\GetCategoriesRequest.xml" />
+    <Content Include="Messages\Requests\Samples\GetPostRequest.xml" />
+    <Content Include="Messages\Requests\Samples\GetUserBlogsRequest.xml" />
+    <Content Include="Messages\Requests\TestOutput\NewPostRequest.xml" />
+    <Content Include="Messages\Responses\Samples\GetCategoriesResponse.xml" />
+    <Content Include="Messages\Responses\Samples\GetPostResponse.xml" />
+    <Content Include="Messages\Responses\Samples\GetRecentPostsResponseAzure.xml" />
+    <Content Include="Messages\Responses\Samples\GetRecentPostsResponseWordPress.xml" />
+    <Content Include="Messages\Responses\Samples\GetUserBlogsResponse.xml" />
+    <Content Include="Messages\Requests\Samples\NewPostRequest.xml" />
+    <Content Include="Messages\Requests\Samples\﻿GetRecentPostsRequest.xml" />
+    <Content Include="Messages\Responses\Samples\NewPostResponse.xml" />
+    <Content Include="Messages\Responses\TestOutput\GetRecentPostsResponse.xml" />
+    <Content Include="wlrmanifest.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,9 +1,11 @@
+using System.Collections.Generic;
+using System.Xml.Serialization;
+
 namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
 {
     #region Using Directives
 
-    using System.Collections.Generic;
-    using System.Xml.Serialization;
+    
 
     #endregion 
 
@@ -14,7 +16,7 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
             this.Member = new List<Member>();
         }
 
-       [XmlArray("struct", Namespace = ""), XmlArrayItem("member", Namespace = "")]
-       public List<Member> Member { get; set; }
+        [XmlArray("struct", Namespace = ""), XmlArrayItem("member", Namespace = "")]
+        public List<Member> Member { get; set; }
     }
 }

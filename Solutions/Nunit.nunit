@@ -1,0 +1,7 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" processModel="Default" domainUsage="Default" appbase="C:\Users\Alice\Source\Repos\Endjin.Web.MetaWeblog\Solutions\Endjin.Web.MetaWeblog.Integration.Specs" />
+  <Config name="Debug" binpathtype="Auto" configfile="Endjin.Web.MetaWeblog.Integration.Specs.dll.config" runtimeFramework="net-4.0.21006">
+    <assembly path="..\Source\Repos\Endjin.Web.MetaWeblog\Solutions\Endjin.Web.MetaWeblog.Integration.Specs\bin\Debug\Endjin.Web.MetaWeblog.Integration.Specs.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto" />
+</NUnitProject>
