@@ -101,7 +101,9 @@
     <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\Response.cs" />
     <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\ResponseParam.cs" />
     <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\ResponseParams.cs" />
+    <Compile Include="Domain\XmlRpc\Response\PostContentResponse\ComplexMember.cs" />
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\Member.cs" />
+    <Compile Include="Domain\XmlRpc\Response\PostContentResponse\MemberCategoryValue.cs" />
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\MemberValue.cs" />
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\MemberValueArray.cs" />
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\Response.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\ResponseParam.cs" />
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\ResponseParams.cs" />
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\ResponseParamValue.cs" />
+    <Compile Include="Domain\XmlRpc\Response\PostContentResponse\ResponseStruct.cs" />
     <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToGetRecentPostsRequestMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToNewPostRequestMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Response\PostToXmlRpcResponseMapper.cs" />

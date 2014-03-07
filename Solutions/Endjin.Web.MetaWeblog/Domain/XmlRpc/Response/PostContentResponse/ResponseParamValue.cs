@@ -9,12 +9,21 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse
 
     public class ResponseParamValue
     {
-        public ResponseParamValue()
-        {
-            this.Member = new List<Member>();
-        }
+        private List<Member> member;
 
-        [XmlArray("struct", Namespace = ""), XmlArrayItem("member", Namespace = "")]
-        public List<Member> Member { get; set; }
+        [XmlArray("struct", Namespace = "")]
+        [XmlArrayItem("member", Namespace = "")]
+        public List<Member> Member 
+        {
+            get
+            {
+                return this.member ?? (this.member = new List<Member>());
+            }
+
+            set
+            {
+                this.member = value;
+            }
+        }
     }
 }

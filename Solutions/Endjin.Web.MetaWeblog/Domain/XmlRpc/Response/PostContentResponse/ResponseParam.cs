@@ -9,7 +9,6 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse
     public class ResponseParam
     {
         [XmlElement("value", Namespace = "")]
-        public ResponseData Value { get; set; }
-
+        public ResponseStruct Value { get; set; }
     }
 }

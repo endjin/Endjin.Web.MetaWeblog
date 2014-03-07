@@ -1,12 +1,10 @@
 namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse
 {
-    using System.Xml.Serialization;
-
     #region Using Directives
 
-    
+    using System.Xml.Serialization;
 
-    #endregion 
+    #endregion
 
     public class Member
     {
@@ -15,5 +13,8 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse
 
         [XmlElement("value", Namespace = "")]
         public MemberValue Value { get; set; }
+
+        // Or ResponseData and don't give it an attribute here? 
+        public MemberCategoryValue Data { get; set; }
     }
 }

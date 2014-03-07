@@ -8,7 +8,7 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse
     #endregion 
 
     [XmlRoot("methodResponse", Namespace = "")]
-    public class Response
+    public class Response 
     {
         private List<ResponseParams> responseParams;
 

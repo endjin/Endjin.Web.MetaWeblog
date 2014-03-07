@@ -23,17 +23,11 @@
                 {
                     Param = new ResponseParam
                     {
-                        Value = new ResponseData
+                        Value = new ResponseStruct()
                         {
-                            Data = new List<ResponseDataItem>
+                            Member = new List<Member>
                             {
-                                new ResponseDataItem
-                                {
-                                    Value = new ResponseParamValue
-                                    {
-                                        Member = new List<Member>
-                                        {
-                                            new Member
+                                  new Member
                                             {
                                                 Name = "postid",
                                                 Value = new MemberValue
@@ -42,18 +36,16 @@
                                                     Value = post.postid
                                                 }
                                             },
-                                            new Member
+                                   new Member
                                             {
                                                 Name = "dateCreated",
                                                 Value = new MemberValue
                                                 {
-                                                    //ValueChoice = MemberValue.ValueType.DateTime,
-                                                    //Value = post.dateCreated
                                                     ValueChoice = MemberValue.ValueType.Iso8601,
                                                     Value = post.dateCreated.ToString("yyyy-MM-ddTHH:mm:ss")
                                                 }
                                             },
-                                            new Member
+                                    new Member
                                             {
                                                 Name = "title",
                                                 Value = new MemberValue
@@ -62,7 +54,7 @@
                                                     Value = post.title
                                                 }
                                             },
-                                            new Member
+                                    new Member
                                             {
                                                 Name = "description",
                                                 Value = new MemberValue
@@ -72,7 +64,7 @@
                                                     Value = post.description
                                                 }
                                             },
-                                            new Member
+                                     new Member
                                             {
                                                 Name = "link",
                                                 Value = new MemberValue
@@ -82,7 +74,7 @@
                                                 }
                                             }
                                             ,
-                                            new Member
+                                     new Member
                                             {
                                                 Name = "publish",
                                                 Value = new MemberValue
@@ -91,25 +83,30 @@
                                                     Value = post.publish.ToString()
                                                 }
                                             },
-                                            //new Member
-                                            //{
-                                            //    Name = "categories",
-                                            //    Value = new MemberValue
-                                            //    {
-                                            //        ValueChoice = MemberValue.ValueType.Array,
-                                            //        Value = new MemberValueArray
-                                            //        {
-                                            //            Value = post.categories.Select(category => new MemberValue
-                                            //            {
-                                            //                ValueChoice = MemberValue.ValueType.String, Value = category
-                                            //            }).ToList()
-                                            //        }
-                                            //    }
-                                            //}
-                                        }
-                                    }
-                                }
-                            }
+                                      new Member
+                                            {
+                                                Name = "categories",
+                                                Data = new MemberCategoryValue()
+                                                           {
+                                                               Value = new ResponseData()
+                                                                           {
+                                                                               Data = new List<ResponseDataItem>()
+                                                                                          {
+                                                                                              new ResponseDataItem()
+                                                                                                  {
+                                                                                                                     Value = post.categories.Select(category => new MemberValue()
+                                                                                                                            {
+                                                                                                                                ValueChoice = MemberValue.ValueType.String, Value = category
+                                                                                                                            }).ToList()
+                                                                                                     }
+                                                                                             }
+                                                                                          
+                                                                           }
+                                                           }
+
+
+                                                }
+                                            }
                         }
                     }
                 });
