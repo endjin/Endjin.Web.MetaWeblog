@@ -6,9 +6,9 @@
 
     using Endjin.Web.MetaWeblog.Contracts.Mappers;
     using Endjin.Web.MetaWeblog.Domain.MetaWeblog.Response;
-    using Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse;
+    using Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.ConfirmationResponse;
 
-    #endregion 
+    #endregion
 
     public class PostIdToXmlRpcResponseMapper : IMapper<List<PostId>, Response>
     {
@@ -22,30 +22,11 @@
                 {
                     Param = new ResponseParam
                     {
-                        Value = new ResponseData
-                        {
-                            Data = new List<ResponseDataItem>
-                            {
-                                new ResponseDataItem
-                                {
-                                    Value = new ResponseParamValue
-                                    {
-                                        Member = new List<Member>
-                                        {
-                                            new Member
-                                            {
-                                                Name = "postid",
-                                                Value = new MemberValue
-                                                {
-                                                    ValueChoice = MemberValue.ValueType.String,
-                                                    Value = postId.Id
-                                                }
-                                            },
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        Value = new MemberValue
+                              {
+                                  ValueChoice = MemberValue.ValueType.String,
+                                  Value = postId.Id
+                              },
                     }
                 });
             }

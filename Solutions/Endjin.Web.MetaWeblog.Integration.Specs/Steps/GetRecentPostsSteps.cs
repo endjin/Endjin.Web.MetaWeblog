@@ -9,9 +9,9 @@
     using System.Xml;
     using System.Xml.Serialization;
 
-    using Endjin.Web.MetaWeblog.Contracts.Domain;
     using Endjin.Web.MetaWeblog.Domain.XmlRpc;
     using Endjin.Web.MetaWeblog.Domain.XmlRpc.Request;
+    using Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse;
     using Endjin.Web.MetaWeblog.Integration.Specs.Steps;
 
     using TechTalk.SpecFlow;
@@ -49,17 +49,16 @@
         {
             var request = ScenarioContext.Current.Get<RequestTop>(Keys.XmlRpcRequest);
             var httpResponseMessage = ScenarioContext.Current.Get<HttpResponseMessage>(Keys.HttpResponseMessage);
-            var response = httpResponseMessage.Content.ReadAsAsync<IResponse>().Result;
+            var response = httpResponseMessage.Content.ReadAsAsync<Response>().Result;
 
             // Using 'using' also disposes of the stream tvm
             using (MemoryStream stream = new MemoryStream())
             {
-                var serializer = new XmlSerializer(typeof(IResponse));
+                var serializer = new XmlSerializer(typeof(Response));
                 serializer.Serialize(XmlWriter.Create(stream), response);
                 Debug.WriteLine(Encoding.UTF8.GetString(stream.ToArray()));
                 stream.Flush();
             }
         }
-
     }
 }

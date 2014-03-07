@@ -5,7 +5,7 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse
 
     #region Using Directives
 
-    
+
 
     #endregion
 
@@ -40,7 +40,7 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse
          XmlElement("base64", typeof(string), Namespace = ""),
          XmlElement("array", typeof(MemberValueArray), Namespace = ""),
          XmlElement("boolean", typeof(int), Namespace = "")]
-        public object Value {get; set;}
+        public object Value { get; set; }
 
         [XmlIgnore]
         public virtual ValueType ValueChoice { get; set; }

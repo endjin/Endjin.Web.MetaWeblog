@@ -22,7 +22,10 @@
 
         private void RegisterDefaultContent(IHttpResponseMessageMapperFactory responseMapperFactory)
         {
-            responseMapperFactory.RegisterContentFor<XmlRpcResponseToHttpResponseMessagetMapper>(MetaWeblogActions.GetUsersBlogs);
+            responseMapperFactory.RegisterContentFor<XmlRpcMetaDataResponseToHttpResponseMapper>(MetaWeblogActions.GetUsersBlogs);
+            responseMapperFactory.RegisterContentFor<XmlRpcMetaDataResponseToHttpResponseMapper>(MetaWeblogActions.GetCategories);
+            responseMapperFactory.RegisterContentFor<XmlRpcPostContentResponseToHttpResponseMapper>(MetaWeblogActions.GetRecentPosts);
+            responseMapperFactory.RegisterContentFor<XmlRpcConfirmationResponseToHttpResponseMessageMapper>(MetaWeblogActions.NewPost);
         }
     }
 }

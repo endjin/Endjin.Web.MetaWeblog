@@ -5,13 +5,10 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.ConfirmationResponse
     using System.Collections.Generic;
     using System.Xml.Serialization;
 
-    using Endjin.Web.MetaWeblog.Contracts.Domain;
-    using Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.FaultResponse;
-
     #endregion 
 
     [XmlRoot("methodResponse", Namespace = "")]
-    public class Response : IResponse
+    public class Response 
     {
         private List<ResponseParams> responseParams;
 

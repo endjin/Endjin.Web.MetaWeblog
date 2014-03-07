@@ -91,21 +91,21 @@
                                                     Value = post.publish.ToString()
                                                 }
                                             },
-                                            new Member
-                                            {
-                                                Name = "categories",
-                                                Value = new MemberValue
-                                                {
-                                                    ValueChoice = MemberValue.ValueType.Array,
-                                                    Value = new MemberValueArray
-                                                    {
-                                                        Value = post.categories.Select(category => new MemberValue
-                                                        {
-                                                            ValueChoice = MemberValue.ValueType.String, Value = category
-                                                        }).ToList()
-                                                    }
-                                                }
-                                            }
+                                            //new Member
+                                            //{
+                                            //    Name = "categories",
+                                            //    Value = new MemberValue
+                                            //    {
+                                            //        ValueChoice = MemberValue.ValueType.Array,
+                                            //        Value = new MemberValueArray
+                                            //        {
+                                            //            Value = post.categories.Select(category => new MemberValue
+                                            //            {
+                                            //                ValueChoice = MemberValue.ValueType.String, Value = category
+                                            //            }).ToList()
+                                            //        }
+                                            //    }
+                                            //}
                                         }
                                     }
                                 }

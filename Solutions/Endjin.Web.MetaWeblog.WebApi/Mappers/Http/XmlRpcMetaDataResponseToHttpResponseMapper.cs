@@ -1,7 +1,5 @@
 ﻿namespace Endjin.Web.MetaWeblog.WebApi.Mappers.Http
 {
-    #region Using Directives
-
     using System.Net;
     using System.Net.Http;
     using System.Net.Http.Formatting;
@@ -9,9 +7,7 @@
     using Endjin.Web.MetaWeblog.Contracts.Mappers;
     using Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse;
 
-    #endregion 
-
-    public class XmlRpcResponseToHttpResponseMessagetMapper : IMapper<Response, HttpResponseMessage>
+    public class XmlRpcMetaDataResponseToHttpResponseMapper : IMapper<Response, HttpResponseMessage>
     {
         public HttpResponseMessage MapFrom(Response input)
         {

@@ -114,8 +114,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Installers\ResponseMapperFactoryInstaller.cs" />
-    <Compile Include="Mappers\Http\XmlRpcResponseToHttpResponseMessagetMapper.cs" />
+    <Compile Include="Mappers\Http\XmlRpcConfirmationResponseToHttpResponseMessageMapper.cs" />
     <Compile Include="Mappers\Http\HttpResponseMessageMapperFactory.cs" />
+    <Compile Include="Mappers\Http\XmlRpcFaultResponseToHttpResponseMapper.cs" />
+    <Compile Include="Mappers\Http\XmlRpcMetaDataResponseToHttpResponseMapper.cs" />
+    <Compile Include="Mappers\Http\XmlRpcPostContentResponseToHttpResponseMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

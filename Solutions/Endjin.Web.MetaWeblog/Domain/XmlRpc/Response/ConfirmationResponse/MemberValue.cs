@@ -38,7 +38,7 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.ConfirmationResponse
          XmlElement("dateTime.iso8601", typeof(string), Namespace = ""),
          XmlElement("double", typeof(double), Namespace = ""),
          XmlElement("base64", typeof(string), Namespace = ""),
-         XmlElement("array", typeof(MemberValueArray), Namespace = ""),
+         //XmlElement("array", typeof(MemberValueArray), Namespace = ""),
          XmlElement("boolean", typeof(int), Namespace = "")]
         public object Value {get; set;}
 

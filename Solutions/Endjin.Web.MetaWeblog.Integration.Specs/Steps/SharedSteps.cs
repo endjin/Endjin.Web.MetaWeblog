@@ -169,7 +169,6 @@
             var response = ScenarioContext.Current.Get<HttpResponseMessage>(Keys.HttpResponseMessage);
 
             response.StatusCode.ShouldEqual(HttpStatusCode.OK);
-            //Why isn't there an 'Assert' here? 
         }
     }
 }

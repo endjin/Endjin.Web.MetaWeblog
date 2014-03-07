@@ -57,7 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\Domain\IResponse.cs" />
     <Compile Include="Contracts\Mappers\IMapper.cs" />
     <Compile Include="Contracts\Mappers\IRequestMapperFactory.cs" />
     <Compile Include="Contracts\Mappers\IResponseMapperFactory.cs" />
@@ -98,15 +97,10 @@
     <Compile Include="Domain\XmlRpc\Response\FaultResponse\MemberValue.cs" />
     <Compile Include="Domain\XmlRpc\Response\FaultResponse\Response.cs" />
     <Compile Include="Domain\XmlRpc\Response\FaultResponse\VersionResult.cs" />
-    <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\Member.cs" />
     <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\MemberValue.cs" />
-    <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\MemberValueArray.cs" />
     <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\Response.cs" />
-    <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\ResponseData.cs" />
-    <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\ResponseDataItem.cs" />
     <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\ResponseParam.cs" />
     <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\ResponseParams.cs" />
-    <Compile Include="Domain\XmlRpc\Response\ConfirmationResponse\ResponseParamValue.cs" />
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\Member.cs" />
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\MemberValue.cs" />
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\MemberValueArray.cs" />
@@ -137,7 +131,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
