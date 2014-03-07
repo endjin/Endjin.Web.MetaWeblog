@@ -11,7 +11,8 @@
     {
         public HttpResponseMessage MapFrom(Response input)
         {
-            return new HttpResponseMessage(HttpStatusCode.OK) { Content = new ObjectContent(typeof(Response), input, new XmlMediaTypeFormatter()) };
+            var xmlFormatter = new XmlMediaTypeFormatter { UseXmlSerializer = true };
+            return new HttpResponseMessage(HttpStatusCode.OK) { Content = new ObjectContent(typeof(Response), input, xmlFormatter) };
         }
 
         public object MapFrom(object input)

@@ -18,6 +18,7 @@
 
     using Endjin.Web.MetaWeblog.Domain.XmlRpc;
     using Endjin.Web.MetaWeblog.Domain.XmlRpc.Request;
+    using Endjin.Web.MetaWeblog.Integration.Specs.Helpers;
 
     using Should;
 
@@ -159,6 +160,8 @@
             var client = ScenarioContext.Current.Get<HttpClient>(Keys.HttpClient);
 
             HttpResponseMessage response = client.SendAsync(request, new CancellationTokenSource().Token).Result;
+
+            Print.HttpResponseMessage<Domain.XmlRpc.Response.MetaDataResponse.Response>(response);
 
             ScenarioContext.Current.Set(response, Keys.HttpResponseMessage);
         }

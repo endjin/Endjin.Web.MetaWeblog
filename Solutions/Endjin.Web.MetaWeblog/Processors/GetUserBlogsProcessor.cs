@@ -23,7 +23,7 @@
                 {
                     BlogId = "1",
                     BlogName = "endjin blog",
-                    Url = "http://localhost:7169/"
+                    Url = "http://localhost.com:7162"
                 }
             });
         }

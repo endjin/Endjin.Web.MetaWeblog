@@ -1,6 +1,7 @@
 namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse
 {
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
     using System.Xml.Serialization;
 
     #region Using Directives
@@ -9,6 +10,7 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse
 
     #endregion
 
+    //[DataContract(Namespace = "")]
     public class MemberValueArray
     {
         public MemberValueArray()

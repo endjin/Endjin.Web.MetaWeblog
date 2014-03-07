@@ -8,6 +8,7 @@
     using System.Xml.Serialization;
 
     using Endjin.Web.MetaWeblog.Domain.XmlRpc;
+    using Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse;
 
     #endregion 
 
@@ -21,10 +22,10 @@
             var xmlFormatter = new XmlMediaTypeFormatter { UseXmlSerializer = true };
             xmlFormatter.SetSerializer<RequestTop>(new XmlSerializer(typeof(RequestTop)));
 
-            xmlFormatter.SetSerializer<Domain.XmlRpc.Response.FaultResponse.Response>(new XmlSerializer(typeof(Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.FaultResponse.Response)));
-            xmlFormatter.SetSerializer<Domain.XmlRpc.Response.ConfirmationResponse.Response>(new XmlSerializer(typeof(Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.ConfirmationResponse.Response)));
-            xmlFormatter.SetSerializer<Domain.XmlRpc.Response.MetaDataResponse.Response>(new XmlSerializer(typeof(Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.MetaDataResponse.Response)));
-            xmlFormatter.SetSerializer<Domain.XmlRpc.Response.PostContentResponse.Response>(new XmlSerializer(typeof(Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.PostContentResponse.Response)));
+            //xmlFormatter.SetSerializer<Domain.XmlRpc.Response.FaultResponse.Response>(new XmlSerializer(typeof(Domain.XmlRpc.Response.FaultResponse.Response)));
+            //xmlFormatter.SetSerializer<Domain.XmlRpc.Response.ConfirmationResponse.Response>(new XmlSerializer(typeof(Domain.XmlRpc.Response.ConfirmationResponse.Response)));
+            //xmlFormatter.SetSerializer<Response>(new XmlSerializer(typeof(Response)));
+            //xmlFormatter.SetSerializer<Domain.XmlRpc.Response.PostContentResponse.Response>(new XmlSerializer(typeof(Domain.XmlRpc.Response.PostContentResponse.Response)));
 
             controllerSettings.Formatters.Add(xmlFormatter);
         }
