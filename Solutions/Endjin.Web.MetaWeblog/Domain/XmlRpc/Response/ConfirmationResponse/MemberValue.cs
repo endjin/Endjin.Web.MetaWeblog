@@ -40,6 +40,7 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc.Response.ConfirmationResponse
          XmlElement("base64", typeof(string), Namespace = ""),
          //XmlElement("array", typeof(MemberValueArray), Namespace = ""),
          XmlElement("boolean", typeof(int), Namespace = "")]
+
         public object Value {get; set;}
 
         [XmlIgnore]

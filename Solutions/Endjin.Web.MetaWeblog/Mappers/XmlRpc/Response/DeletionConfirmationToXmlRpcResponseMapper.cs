@@ -21,8 +21,8 @@
                     {
                         Value = new MemberValue
                               {
-                                  ValueChoice = MemberValue.ValueType.String,
-                                  Value = deletionConfirmation.Confirmation.ToString(CultureInfo.InvariantCulture)
+                                  ValueChoice = MemberValue.ValueType.Boolean,
+                                  Value = deletionConfirmation.Confirmation
                               },
                     }
                 });
