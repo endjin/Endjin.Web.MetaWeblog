@@ -16,10 +16,10 @@
         {
             return new GetRecentPostsRequest
             {
-                AppKey = input.Params.ElementAt(0).RequestValue.Value.ToString(),
-                UserName = input.Params.ElementAt(1).RequestValue.Value.ToString(),
-                Password = input.Params.ElementAt(2).RequestValue.Value.ToString(),
-                NumberOfPosts = input.Params.ElementAt(3).RequestValue.Value.ToString(),
+                AppKey = input.ValueAsString(0),
+                UserName = input.ValueAsString(1),
+                Password = input.ValueAsString(2),
+                NumberOfPosts = input.ValueAsString(3)
             };
         }
 

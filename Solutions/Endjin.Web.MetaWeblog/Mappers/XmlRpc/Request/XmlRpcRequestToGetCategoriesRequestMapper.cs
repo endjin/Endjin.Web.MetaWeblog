@@ -16,9 +16,9 @@
         {
             return new GetCategoriesRequest
             {
-                AppKey = input.Params.ElementAt(0).RequestValue.Value.ToString(),
-                Password = input.Params.ElementAt(2).RequestValue.Value.ToString(),
-                UserName = input.Params.ElementAt(1).RequestValue.Value.ToString(),
+                AppKey = input.ValueAsString(0),
+                Password = input.ValueAsString(2),
+                UserName = input.ValueAsString(1)
             };
         }
 

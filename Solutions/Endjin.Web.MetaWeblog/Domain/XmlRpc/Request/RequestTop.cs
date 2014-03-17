@@ -22,7 +22,7 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
         [XmlArrayItem("param", Namespace = "")]
         public List<RequestParam> Params { get; set; }
 
-        protected internal string ContentValueAsString(int position, string memberName)
+        protected internal string ValueAsString(int position, string memberName)
         {
             var result = this.Params.ElementAt(position)
                 .RequestValue.Member.FirstOrDefault(member => member.Name.ToString(CultureInfo.InvariantCulture) == memberName);
@@ -39,7 +39,12 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
             }
         }
 
-        protected internal string[] ContentValueAsArray(int position, string memberName)
+        protected internal string ValueAsString(int position)
+        {
+            return this.Params.ElementAt(position).RequestValue.Value.ToString();
+        }
+
+        protected internal string[] ValueAsArray(int position, string memberName)
         {
             var result = this.Params.ElementAt(position)
                 .RequestValue.Member.FirstOrDefault(
@@ -55,7 +60,7 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
             {
                 return new string[0];
             }
-            
         }
+
     }
 }

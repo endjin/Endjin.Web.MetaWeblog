@@ -18,14 +18,13 @@
         {
             return new NewPostRequest
             {
-                BlogId = input.Params.ElementAt(2).RequestValue.Value.ToString(),
-                //BlogId = input.ContentValueAsString(2),
-                UserName = input.Params.ElementAt(0).RequestValue.Value.ToString(),
-                Password = input.Params.ElementAt(1).RequestValue.Value.ToString(),
-                Title = input.ContentValueAsString(3, "title"),
-                Description = input.ContentValueAsString(3, "description"),
-                Categories = input.ContentValueAsArray(3, "categories"),
-                Publish = input.Params.ElementAt(4).RequestValue.Value.ToString(),
+                BlogId = input.ValueAsString(2),
+                UserName = input.ValueAsString(0),
+                Password = input.ValueAsString(1),
+                Title = input.ValueAsString(3, "title"),
+                Description = input.ValueAsString(3, "description"),
+                Categories = input.ValueAsArray(3, "categories"),
+                Publish = input.ValueAsString(4)
             };
         }
          
