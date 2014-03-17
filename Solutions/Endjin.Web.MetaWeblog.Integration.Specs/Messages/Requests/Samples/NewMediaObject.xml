@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<methodCall>
+  <methodName>metaWeblog.newMediaObject</methodName>
+  <params>
+    <param>
+      <value>
+        <string>1</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>Alice</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <string>Waddicor</string>
+      </value>
+    </param>
+    <param>
+      <value>
+        <struct>
+          <member>
+            <name>name</name>
+            <value>
+              <string>Windows-Live-Writer/A-test-blog_10960/Capture.png</string>
+            </value>
+          </member>
+          <member>
+            <name>type</name>
+            <value>
+              <string>image/png</string>
+            </value>
+          </member>
+          <member>
+            <name>bits</name>
+            <value>
+              <base64>iVBORw0KGgoAAAANSUhEUgAAABYAAAATCAYAAACUef2IAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAACtJREFUOE9j0LQM+08LPCQNDgUyqI9HDYbjUYPheNRgOB41GI5HDYbi0P8ABT/Ljb1LitEAAAAASUVORK5CYII=</base64>
+            </value>
+          </member>
+        </struct>
+      </value>
+    </param>
+  </params>
+</methodCall>

@@ -108,12 +108,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>getRecentPosts.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\NewMediaObject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewMediaObject.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\newPost.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>newPost.feature</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Print.cs" />
+    <Content Include="Messages\Requests\Samples\NewMediaObject.xml" />
     <Content Include="Messages\Responses\Samples\DeletePostResponse.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -132,6 +138,7 @@
     <Compile Include="Steps\GetCategoriesSteps.cs" />
     <Compile Include="Steps\GetUserBlogsSteps.cs" />
     <Compile Include="Steps\Keys.cs" />
+    <Compile Include="Steps\NewMediaObjectSteps.cs" />
     <Compile Include="Steps\NewPostSteps.cs" />
     <Compile Include="Steps\SharedSteps.cs" />
   </ItemGroup>
@@ -152,6 +159,10 @@
     <None Include="Features\getUserBlogs.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>getUserBlogs1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\NewMediaObject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NewMediaObject.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\newPost.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -184,6 +195,7 @@
     <Content Include="Messages\Requests\Samples\NewPostRequest.xml" />
     <Content Include="Messages\Requests\Samples\﻿GetRecentPostsRequest.xml" />
     <Content Include="Messages\Responses\Samples\NewPostResponse.xml" />
+    <Content Include="Messages\Responses\TestOutput\DeletePostResponse.xml" />
     <Content Include="Messages\Responses\TestOutput\GetRecentPostsResponse.xml" />
     <Content Include="Messages\Responses\TestOutput\NewPostResponse.xml" />
     <Content Include="Messages\Responses\TestOutput\NewPostResponse2.xml" />
