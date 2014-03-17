@@ -1,12 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Print.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The print.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-namespace Endjin.Web.MetaWeblog.Integration.Specs.Helpers
+﻿namespace Endjin.Web.MetaWeblog.Integration.Specs.Helpers
 {
     using System.Diagnostics;
     using System.IO;
@@ -32,19 +24,20 @@ namespace Endjin.Web.MetaWeblog.Integration.Specs.Helpers
             }
         }
 
-        public static void HttpResponseMessage<T>(HttpResponseMessage response) where T : new()
+        public static void HttpResponseMessage(HttpResponseMessage response)
         {
-            using (var stream = new MemoryStream())
-            {
-                var result1 = response.Content.ReadAsStringAsync().Result;
-                var result = response.Content.ReadAsAsync<T>().Result;
+            var result = response.Content.ReadAsStringAsync().Result;
+            Debug.WriteLine(result);
+            //using (var stream = new MemoryStream())
+            //{
+            //    var result = response.Content.ReadAsAsync<T>().Result;
 
-                var serializer = new XmlSerializer(typeof(T));
-                serializer.Serialize(XmlWriter.Create(stream), result);
-                string message = Encoding.UTF8.GetString(stream.ToArray());
-                Debug.WriteLine(message);
-                stream.Flush();
-            }
+            //    var serializer = new XmlSerializer(typeof(T));
+            //    serializer.Serialize(XmlWriter.Create(stream), result);
+            //    string message = Encoding.UTF8.GetString(stream.ToArray());
+            //    Debug.WriteLine(message);
+            //    stream.Flush();
+            //}
         }
     }
 }

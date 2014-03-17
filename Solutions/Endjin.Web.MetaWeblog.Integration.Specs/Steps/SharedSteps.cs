@@ -146,22 +146,13 @@
 
             var request = HttpRequestMethods.CreateRequest("http://endjin.com/metaweblog", "text/xml", HttpMethod.Post, xmlRpc, new XmlMediaTypeFormatter());
 
-            //To let me check if the Request object has been constructed correctly - testing the test!
-            var xmlRpcRequest = request.Content.ReadAsAsync<RequestTop>().Result;
-
-            using (MemoryStream stream = new MemoryStream())
-            {
-                var serializer = new XmlSerializer(typeof(RequestTop));
-                serializer.Serialize(XmlWriter.Create(stream), xmlRpcRequest);
-                Debug.WriteLine(Encoding.UTF8.GetString(stream.ToArray()));
-                stream.Flush();
-            }
+            Print.HttpRequestMessage(request);
 
             var client = ScenarioContext.Current.Get<HttpClient>(Keys.HttpClient);
 
             HttpResponseMessage response = client.SendAsync(request, new CancellationTokenSource().Token).Result;
 
-            Print.HttpResponseMessage<Domain.XmlRpc.Response.MetaDataResponse.Response>(response);
+            Print.HttpResponseMessage(response);
 
             ScenarioContext.Current.Set(response, Keys.HttpResponseMessage);
         }

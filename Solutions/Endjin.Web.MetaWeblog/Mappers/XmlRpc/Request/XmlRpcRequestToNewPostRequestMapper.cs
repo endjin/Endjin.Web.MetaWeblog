@@ -21,10 +21,11 @@
                 BlogId = input.Params.ElementAt(2).RequestValue.Value.ToString(),
                 UserName = input.Params.ElementAt(0).RequestValue.Value.ToString(),
                 Password = input.Params.ElementAt(1).RequestValue.Value.ToString(),
-                Title = input.Params.ElementAt(3).RequestValue.Member.FirstOrDefault(member => member.Name.ToString() == "title").Value.Value.ToString(),
-                Description = input.Params.ElementAt(3).RequestValue.Member.FirstOrDefault(member => member.Name.ToString() == "description").Value.Value.ToString(),
-                Categories = ((MemberValueArray)input.Params.ElementAt(3).RequestValue.Member.FirstOrDefault(member => member.Name.ToString(CultureInfo.InvariantCulture) == "categories").Value.Value).Value.Select(memberValue => memberValue.Value.ToString()).ToArray(),
-                Publish = input.Params.ElementAt(4).RequestValue.Value.ToString()
+                Title = input.ValueAsString(3, "title"),
+                Description = input.ValueAsString(3, "description"),
+                Categories = input.ValueAsArray(3, "categories"),
+                //Categories = ((MemberValueArray)input.Params.ElementAt(3).RequestValue.Member.FirstOrDefault(member => member.Name.ToString(CultureInfo.InvariantCulture) == "categories").Value.Value).Value.Select(memberValue => memberValue.Value.ToString()).ToArray(),
+                Publish = input.Params.ElementAt(4).RequestValue.Value.ToString(),
             };
         }
 
