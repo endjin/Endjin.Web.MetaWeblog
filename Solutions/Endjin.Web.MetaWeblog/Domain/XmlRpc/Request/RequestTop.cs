@@ -2,6 +2,7 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
 {
     #region Using Directives
 
+    using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
@@ -21,22 +22,40 @@ namespace Endjin.Web.MetaWeblog.Domain.XmlRpc
         [XmlArrayItem("param", Namespace = "")]
         public List<RequestParam> Params { get; set; }
 
-        //TODO
-        protected internal string ValueAsString(int position, string memberName)
+        protected internal string ContentValueAsString(int position, string memberName)
         {
-            return
-                this.Params.ElementAt(position)
-                    .RequestValue.Member.FirstOrDefault(member => member.Name.ToString() == memberName)
-                    .Value.Value.ToString();
+            var result = this.Params.ElementAt(position)
+                .RequestValue.Member.FirstOrDefault(member => member.Name.ToString(CultureInfo.InvariantCulture) == memberName);
+            if (
+                result != null)
+            {
+                return
+                    result
+                        .Value.Value.ToString();
+            }
+            else
+            {
+                return string.Empty;
+            }
         }
 
-        protected internal string[] ValueAsArray(int position, string memberName)
+        protected internal string[] ContentValueAsArray(int position, string memberName)
         {
-            return
-                ((MemberValueArray)this.Params.ElementAt(position)
-                    .RequestValue.Member.FirstOrDefault(
-                        member => member.Name.ToString(CultureInfo.InvariantCulture) == memberName)
-                    .Value.Value).Value.Select(memberValue => memberValue.Value.ToString()).ToArray();
+            var result = this.Params.ElementAt(position)
+                .RequestValue.Member.FirstOrDefault(
+                    member => member.Name.ToString(CultureInfo.InvariantCulture) == memberName);
+            if (
+                result != null)
+            {
+                return
+                    ((MemberValueArray)result
+                                           .Value.Value).Value.Select(memberValue => memberValue.Value.ToString()).ToArray();
+            }
+            else
+            {
+                return new string[0];
+            }
+            
         }
     }
 }
