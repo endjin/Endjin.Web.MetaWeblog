@@ -114,6 +114,9 @@
       <DependentUpon>newPost.feature</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Print.cs" />
+    <Content Include="Messages\Responses\Samples\DeletePostResponse.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Compile Include="Steps\BloggerDeletePostSteps.cs" />
     <Compile Include="Steps\GetRecentPostsSteps.cs" />
     <Compile Include="HttpRequestMethods.cs" />

@@ -21,5 +21,10 @@
         {
             get { return "metaWeblog.newPost"; }
         }
+
+        public static string DeletePost
+        {
+            get { return "blogger.deletePost"; }
+        }
     }
 }

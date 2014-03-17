@@ -26,6 +26,7 @@
             responseMapperFactory.RegisterContentFor<XmlRpcMetaDataResponseToHttpResponseMapper>(MetaWeblogActions.GetCategories);
             responseMapperFactory.RegisterContentFor<XmlRpcPostContentResponseToHttpResponseMapper>(MetaWeblogActions.GetRecentPosts);
             responseMapperFactory.RegisterContentFor<XmlRpcConfirmationResponseToHttpResponseMessageMapper>(MetaWeblogActions.NewPost);
+            responseMapperFactory.RegisterContentFor<XmlRpcConfirmationResponseToHttpResponseMessageMapper>(MetaWeblogActions.DeletePost);
         }
     }
 }

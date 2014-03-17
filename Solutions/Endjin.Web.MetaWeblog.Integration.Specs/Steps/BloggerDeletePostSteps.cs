@@ -2,6 +2,12 @@
 {
     #region using directives
 
+    using System.Globalization;
+    using System.Security.Cryptography;
+
+    using Endjin.Web.MetaWeblog.Domain.XmlRpc;
+    using Endjin.Web.MetaWeblog.Domain.XmlRpc.Request;
+
     using TechTalk.SpecFlow;
 
     #endregion
@@ -12,9 +18,9 @@
         [Given(@"I want to be able to delete a blog post with the id ""(.*)""")]
         public void GivenIWantToBeAbleToDeleteABlogPostWithTheId(string postId)
         {
-            /*var xmlRpc = ScenarioContext.Current.Get<RequestTop>(Keys.XmlRpcRequest);
+            var xmlRpc = ScenarioContext.Current.Get<RequestTop>(Keys.XmlRpcRequest);
 
-            xmlRpc.Method = "Blogger.deleteBlog";
+            xmlRpc.Method = "blogger.deletePost";
 
             var param = new RequestParam
             {
@@ -25,7 +31,20 @@
                 }
             };
 
-            ScenarioContext.Current.Set(xmlRpc, Keys.XmlRpcRequest);*/
+            xmlRpc.Params.Add(param);
+
+            // A boolean is specified by the Blogger API, this is ignored but included here for completeness.
+            var param2 = new RequestParam
+            {
+                RequestValue =
+                {
+                    ValueChoice = MemberValue.ValueType.@Boolean,
+                    Value = 0
+                }
+            };
+            xmlRpc.Params.Add(param2);
+
+            ScenarioContext.Current.Set(xmlRpc, Keys.XmlRpcRequest);
         }
     }
 }

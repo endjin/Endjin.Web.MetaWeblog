@@ -26,6 +26,7 @@
             processorFactory.RegisterContentFor<GetCategoriesProcessor>(MetaWeblogActions.GetCategories);
             processorFactory.RegisterContentFor<GetRecentPostsProcessor>(MetaWeblogActions.GetRecentPosts);
             processorFactory.RegisterContentFor<NewPostProcessor>(MetaWeblogActions.NewPost);
+            processorFactory.RegisterContentFor<DeletePostProcessor>(MetaWeblogActions.DeletePost);
         }
     }
 }

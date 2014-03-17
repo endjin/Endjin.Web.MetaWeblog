@@ -64,11 +64,13 @@
     <Compile Include="Contracts\Processors\IProcessor.cs" />
     <Compile Include="Contracts\Processors\IProcessorFactory.cs" />
     <Compile Include="Domain\MetaWeblog\MetaWeblogActions.cs" />
+    <Compile Include="Domain\MetaWeblog\Request\DeletePostRequest.cs" />
     <Compile Include="Domain\MetaWeblog\Request\GetCategoriesRequest.cs" />
     <Compile Include="Domain\MetaWeblog\Request\GetUserBlogsRequest.cs" />
     <Compile Include="Domain\MetaWeblog\Request\NewPostRequest.cs" />
     <Compile Include="Domain\MetaWeblog\Response\CategoryInfo.cs" />
     <Compile Include="Domain\MetaWeblog\Response\BlogInfo.cs" />
+    <Compile Include="Domain\MetaWeblog\Response\DeletionConfirmation.cs" />
     <Compile Include="Domain\MetaWeblog\Response\MediaObject.cs" />
     <Compile Include="Domain\MetaWeblog\Response\MediaObjectInfo.cs" />
     <Compile Include="Domain\MetaWeblog\Response\Post.cs" />
@@ -114,10 +116,13 @@
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\ResponseParams.cs" />
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\ResponseParamValue.cs" />
     <Compile Include="Domain\XmlRpc\Response\PostContentResponse\ResponseStruct.cs" />
+    <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToDeletePostRequestMapper.cs" />
+    <Compile Include="Mappers\XmlRpc\Response\DeletionConfirmationToXmlRpcResponseMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToGetRecentPostsRequestMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Request\XmlRpcRequestToNewPostRequestMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Response\PostToXmlRpcResponseMapper.cs" />
     <Compile Include="Mappers\XmlRpc\Response\PostIdToXmlRpcResponseMapper.cs" />
+    <Compile Include="Processors\DeletePostProcessor.cs" />
     <Compile Include="Processors\GetCategoriesProcessor.cs" />
     <Compile Include="Installers\RequestMapperFactoryInstaller.cs" />
     <Compile Include="Installers\ProcessorFactoryInstaller.cs" />
